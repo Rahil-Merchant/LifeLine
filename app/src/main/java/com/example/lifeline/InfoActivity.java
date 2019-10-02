@@ -150,7 +150,7 @@ public class InfoActivity extends AppCompatActivity/* implements AdapterView.OnI
 
     public static boolean check_mobNo(String s)
     {
-        Pattern p = Pattern.compile("(0/91)?[7-9][0-9]{9}");
+        Pattern p = Pattern.compile("^(?:(?:\\+|0{0,2})91(\\s*[\\ -]\\s*)?|[0]?)?[789]\\d{9}|(\\d[ -]?){10}\\d$");
         Matcher m = p.matcher(s);
         return (m.find() && m.group().equals(s));
     }

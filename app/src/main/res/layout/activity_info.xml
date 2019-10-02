@@ -25,28 +25,31 @@
         <!--Row 2-->
         <EditText
             android:id="@+id/infoFname"
-            android:layout_width="50pt"
+            android:layout_width="45pt"
             android:layout_height="wrap_content"
             android:hint="First Name"
             android:layout_alignParentStart="true"
             android:paddingLeft="0pt"
-            android:layout_below="@+id/InfoFullnameTv"/>
+            android:layout_below="@+id/InfoFullnameTv"
+            android:textSize="6.5pt"/>
 
         <EditText
             android:id="@+id/infoMname"
-            android:layout_width="50pt"
+            android:layout_width="45pt"
             android:layout_height="wrap_content"
             android:hint="Middle Name"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/InfoFullnameTv"/>
+            android:layout_below="@+id/InfoFullnameTv"
+            android:textSize="6.5pt"/>
 
         <EditText
             android:id="@+id/infoLname"
-            android:layout_width="50pt"
+            android:layout_width="45pt"
             android:layout_height="wrap_content"
             android:hint="Last Name"
             android:layout_alignParentEnd="true"
-            android:layout_below="@+id/InfoFullnameTv"/>
+            android:layout_below="@+id/InfoFullnameTv"
+            android:textSize="6.5pt"/>
 
         <!--Row 3-->
         <TextView
