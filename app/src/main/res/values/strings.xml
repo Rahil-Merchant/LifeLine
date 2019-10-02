@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">LifeLine</string>
+    <string name="app_name_underlined">Life<u>Line</u></string>
+
+    <string-array name="genders">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="bloodGrp1string">
+        <item>A</item>
+        <item>B</item>
+        <item>O</item>
+        <item>AB</item>
+    </string-array>
+
+    <string-array name="bloodGrp2string">
+        <item>+</item>
+        <item>-</item>
+    </string-array>
+</resources>

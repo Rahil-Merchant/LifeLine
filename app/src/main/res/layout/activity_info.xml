@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25pt"
+        android:layout_marginLeft="10pt"
+        android:layout_marginRight="10pt">
+
+        <!--Row 1-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Full Name:"
+            android:id="@+id/InfoFullnameTv"
+            style="@style/TextView"/>
+
+        <!--Row 2-->
+        <EditText
+            android:id="@+id/infoFname"
+            android:layout_width="50pt"
+            android:layout_height="wrap_content"
+            android:hint="First Name"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="0pt"
+            android:layout_below="@+id/InfoFullnameTv"/>
+
+        <EditText
+            android:id="@+id/infoMname"
+            android:layout_width="50pt"
+            android:layout_height="wrap_content"
+            android:hint="Middle Name"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/InfoFullnameTv"/>
+
+        <EditText
+            android:id="@+id/infoLname"
+            android:layout_width="50pt"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/InfoFullnameTv"/>
+
+        <!--Row 3-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="15pt"
+            android:gravity="center_vertical"
+            android:text="Gender : "
+            android:layout_below="@id/infoFname"
+            android:id="@+id/InfoGenderTv"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="12pt"/>
+        <Spinner
+            android:layout_width="70pt"
+            android:id="@+id/InfoGender"
+            android:layout_height="15pt"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_toEndOf="@id/InfoGenderTv"
+            android:layout_marginTop="12pt"
+            android:layout_marginLeft="8pt"
+            android:layout_below="@id/infoFname" />
+
+        <!--Row 4-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="17pt"
+            android:text="Date of Birth : "
+            android:gravity="center_vertical"
+            android:layout_below="@id/InfoGenderTv"
+            android:id="@+id/InfoDobTv"
+            android:layout_marginTop="12pt"
+            android:layout_alignParentStart="true"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="17pt"
+            style="@style/Button"
+            android:text="Select Date"
+            android:drawablePadding="5pt"
+            android:drawableRight="@drawable/ic_date_range_black_24dp"
+            android:layout_below="@id/InfoGenderTv"
+            android:layout_marginTop="12pt"
+            android:layout_marginLeft="8pt"
+            android:id="@+id/InfoDob"
+            android:layout_toEndOf="@id/InfoDobTv"/>
+
+        <!--Row 5-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Details : "
+            android:layout_below="@id/InfoDobTv"
+            android:id="@+id/ContactDetailsTv"
+            android:layout_marginTop="12pt"
+            android:layout_alignParentStart="true"/>
+
+        <!--Row 6-->
+        <EditText
+            android:id="@+id/infoMobNo"
+            android:layout_width="100pt"
+            android:layout_height="20pt"
+            android:layout_marginTop="1pt"
+            android:hint="Mobile No."
+            android:drawableLeft="@drawable/ic_local_phone_black_24dp"
+            android:drawablePadding="5pt"
+            android:paddingLeft="0pt"
+            android:textSize="7pt"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/ContactDetailsTv"/>
+
+        <!--Row 7-->
+        <EditText
+            android:id="@+id/infoOccupation"
+            android:layout_width="70pt"
+            android:layout_height="20pt"
+            android:gravity="center_vertical"
+            android:hint="Occupation"
+            android:layout_marginTop="1pt"
+            android:layout_alignParentStart="true"
+            android:textSize="7pt"
+            android:layout_below="@+id/infoMobNo"/>
+
+        <EditText
+            android:id="@+id/infoOrg"
+            android:layout_width="70pt"
+            android:layout_height="20pt"
+            android:layout_marginTop="1pt"
+            android:gravity="center_vertical"
+            android:hint="Organization"
+            android:layout_alignParentEnd="true"
+            android:textSize="7pt"
+            android:layout_below="@+id/infoMobNo"/>
+
+        <!--Row 8-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="15pt"
+            android:gravity="center_vertical"
+            android:text="Blood Group : "
+            android:layout_below="@id/infoOccupation"
+            android:id="@+id/InfoBloodGrpTv"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="12pt"/>
+        <Spinner
+            android:layout_width="50pt"
+            android:id="@+id/InfoBloodGrp1"
+            android:layout_height="15pt"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_toEndOf="@id/InfoBloodGrpTv"
+            android:layout_marginTop="12pt"
+            android:layout_marginLeft="5pt"
+            android:layout_below="@id/infoOccupation" />
+
+        <Spinner
+            android:layout_width="50pt"
+            android:id="@+id/InfoBloodGrp2"
+            android:layout_height="15pt"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_toEndOf="@id/InfoBloodGrp1"
+            android:layout_marginTop="12pt"
+            android:layout_marginLeft="5pt"
+            android:layout_below="@id/infoOccupation" />
+
+        <!--Row 9-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/infoProceed"
+            style="@style/Button"
+            android:layout_below="@id/InfoBloodGrpTv"
+            android:layout_marginTop="20pt"
+            android:layout_centerHorizontal="true"
+            android:text="Proceed"
+            android:drawablePadding="4pt"
+            android:drawableRight="@drawable/ic_arrow_forward_black_24dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
