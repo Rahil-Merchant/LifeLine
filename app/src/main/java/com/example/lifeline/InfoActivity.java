@@ -30,8 +30,8 @@ import java.util.regex.Pattern;
 
 public class InfoActivity extends AppCompatActivity/* implements AdapterView.OnItemSelectedListener*/{
 
-    String fname,mname,lname,gender,occupation,organization,mobNo,bloodGrp,dob,bloodGrp1,bloodGrp2;
-    int dobDay,dobMonth,dobYear,year,month,day,maxYear,minYear;
+    String fname,mname,lname,gender,occupation,organization,mobNo,bloodGrp,dob,bloodGrp1,bloodGrp2,last_donated="6/9/1969";
+    int dobDay,dobMonth,dobYear,year,month,day,maxYear,minYear,timesDonated=0,rewards_count=0;
     Calendar calendar;
     private FirebaseAuth mAuth;
     EditText fnameEt,mnameEt,lnameEt,occupationEt,organizationEt,mobNoEt;
@@ -211,7 +211,7 @@ public class InfoActivity extends AppCompatActivity/* implements AdapterView.OnI
             String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
             FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
             DocumentReference uidRef = rootRef.collection("users").document(uid);
-            infoDatabaseWrite iDb = new infoDatabaseWrite(user.getEmail(),fname,mname,lname,gender,occupation,organization,mobNo,bloodGrp,dob);
+            infoDatabaseWrite iDb = new infoDatabaseWrite(user.getEmail(),fname,mname,lname,gender,occupation,organization,mobNo,bloodGrp,dob,timesDonated,rewards_count,last_donated);
             uidRef.set(iDb).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
