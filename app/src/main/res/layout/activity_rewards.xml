@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RewardsActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextView"
+        android:layout_marginTop="40pt"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:text="Every 5 times you donate, you receive a free health check up"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextView"
+        android:layout_marginTop="15pt"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:text="Your Progress :"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/rewards_pbar"
+            style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+            android:layout_width="80pt"
+            android:layout_height="10pt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15pt"
+            android:contentDescription="Your Progress"
+            android:indeterminate="false"
+            android:indeterminateBehavior="repeat"
+            android:max="5"
+            android:progress="2"
+            android:progressBackgroundTintMode="add"
+            android:progressTint="#B50000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextView"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_toStartOf="@id/rewards_pbar"
+            android:text="0"
+            android:layout_below="@+id/rewards_pbar"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextView"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_toEndOf="@id/rewards_pbar"
+            android:text="5"
+            android:layout_below="@+id/rewards_pbar"/>
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10pt">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextView"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="You are "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextView"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="3"
+            android:id="@+id/rewards_remaining"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextView"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text=" donations away from a free health checkup"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="25pt"
+        android:text="Number of free health checkups yet to be redeemed :" />
+
+    <TextView
+        android:id="@+id/rewards_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:textSize="12pt"
+        android:layout_marginTop="10pt"
+        android:text="2" />
+</LinearLayout>

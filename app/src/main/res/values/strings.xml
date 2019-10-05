@@ -19,4 +19,11 @@
         <item>+</item>
         <item>-</item>
     </string-array>
+
+    <string name="title_logout">Logout</string>
+    <string name="title_leaderboard">Leaderboard</string>
+    <string name="title_history">Donation History</string>
+    <string name="title_donate">Donate</string>
+    <string name="title_events">Events</string>
+    <string name="title_rewards">My Rewards</string>
 </resources>

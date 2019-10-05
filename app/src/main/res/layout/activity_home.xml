@@ -19,8 +19,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Logout"
-        android:drawableRight="@drawable/ic_power_settings_new_black_24dp"
+        android:text="@string/title_logout"
+        android:drawableEnd="@drawable/ic_power_settings_new_black_24dp"
         android:drawablePadding="5pt"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20pt"
@@ -30,13 +30,25 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Leaderboard"
-        android:drawableRight="@drawable/ic_format_list_numbered_black_24dp"
+        android:text="@string/title_leaderboard"
+        android:drawableEnd="@drawable/ic_format_list_numbered_black_24dp"
         android:drawablePadding="5pt"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20pt"
         android:id="@+id/homeLeader"
         style="@style/Button"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_rewards"
+        android:drawableEnd="@drawable/ic_card_giftcard_white_24dp"
+        android:drawablePadding="5pt"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20pt"
+        android:id="@+id/homeRewards"
+        style="@style/Button"/>
+
 
 
 </LinearLayout>
