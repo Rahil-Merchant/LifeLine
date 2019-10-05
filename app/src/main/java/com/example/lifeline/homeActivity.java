@@ -24,5 +24,12 @@ public class homeActivity extends AppCompatActivity {
                 startActivity(new Intent(homeActivity.this, LoginActivity.class));
             }
         });
+
+        findViewById(R.id.homeLeader).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(homeActivity.this, LeaderboardActivity.class));
+            }
+        });
     }
 }

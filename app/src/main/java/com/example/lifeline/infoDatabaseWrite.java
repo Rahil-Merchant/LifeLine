@@ -1,14 +1,14 @@
 package com.example.lifeline;
 
 public class infoDatabaseWrite {
-    private String email,fname,mname,lname,gender,occupation,organization,mobNo,bloodGrp,dob,last_donated;
+    private String email,fname,mname,lname,gender,occupation,organization,mobNo,bloodGrp,dob,last_donated,uid;
     private int timesDonated,rewards_count;
 
     public infoDatabaseWrite(){
 
     }
 
-    public infoDatabaseWrite(String email, String fname, String mname, String lname, String gender, String occupation, String organization, String mobNo, String bloodGrp, String dob, int timesDonated, int rewards_count, String last_donated) {
+    public infoDatabaseWrite(String email, String fname, String mname, String lname, String gender, String occupation, String organization, String mobNo, String bloodGrp, String dob, int timesDonated, int rewards_count, String last_donated, String uid) {
         this.email = email;
         this.fname = fname;
         this.mname = mname;
@@ -22,6 +22,7 @@ public class infoDatabaseWrite {
         this.timesDonated = timesDonated;
         this.rewards_count = rewards_count;
         this.last_donated = last_donated;
+        this.uid = uid;
     }
 
     public String getEmail() {
@@ -74,5 +75,9 @@ public class infoDatabaseWrite {
 
     public int getRewards_count() {
         return rewards_count;
+    }
+
+    public String getUid() {
+        return uid;
     }
 }
