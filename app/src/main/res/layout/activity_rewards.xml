@@ -120,4 +120,12 @@
         android:textSize="12pt"
         android:layout_marginTop="10pt"
         android:text="2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20pt"
+        android:text="Please show this screen to hospital authorities to redeem your reward." />
 </LinearLayout>

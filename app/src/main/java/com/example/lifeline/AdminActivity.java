@@ -24,5 +24,12 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(new Intent(AdminActivity.this, LoginActivity.class));
             }
         });
+
+        findViewById(R.id.adminRedeem).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminActivity.this, RedeemActivity.class));
+            }
+        });
     }
 }
