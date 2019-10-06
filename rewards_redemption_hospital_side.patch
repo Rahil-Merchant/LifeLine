@@ -1,0 +1,140 @@
+Index: app/src/main/java/com/example/lifeline/RewardsActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/lifeline/RewardsActivity.java	(revision 02a2335bd275e4e56f63606508b971b6d82a5912)
++++ app/src/main/java/com/example/lifeline/RewardsActivity.java	(date 1570359333524)
+@@ -4,11 +4,9 @@
+ import androidx.appcompat.app.AppCompatActivity;
+ 
+ import android.os.Bundle;
+-import android.util.Log;
+ import android.widget.ProgressBar;
+ import android.widget.TextView;
+ import android.widget.Toast;
+-
+ import com.google.firebase.FirebaseApp;
+ import com.google.firebase.auth.FirebaseAuth;
+ import com.google.firebase.firestore.DocumentReference;
+@@ -16,7 +14,6 @@
+ import com.google.firebase.firestore.EventListener;
+ import com.google.firebase.firestore.FirebaseFirestore;
+ import com.google.firebase.firestore.FirebaseFirestoreException;
+-import com.google.firebase.firestore.ListenerRegistration;
+ 
+ public class RewardsActivity extends AppCompatActivity {
+     FirebaseFirestore db;
+Index: app/src/main/java/com/example/lifeline/SplashActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/lifeline/SplashActivity.java	(revision 02a2335bd275e4e56f63606508b971b6d82a5912)
++++ app/src/main/java/com/example/lifeline/SplashActivity.java	(date 1570359333545)
+@@ -3,13 +3,11 @@
+ import androidx.appcompat.app.AppCompatActivity;
+ import androidx.core.app.ActivityCompat;
+ import androidx.core.content.ContextCompat;
+-
+ import android.Manifest;
+ import android.content.Intent;
+ import android.content.pm.PackageManager;
+ import android.os.Bundle;
+ import android.os.Handler;
+-
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+Index: app/src/main/java/com/example/lifeline/RedeemAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/lifeline/RedeemAdapter.java	(revision 02a2335bd275e4e56f63606508b971b6d82a5912)
++++ app/src/main/java/com/example/lifeline/RedeemAdapter.java	(date 1570359333554)
+@@ -3,13 +3,9 @@
+ import android.view.LayoutInflater;
+ import android.view.View;
+ import android.view.ViewGroup;
+-import android.widget.AdapterView;
+ import android.widget.TextView;
+-import android.widget.Toast;
+-
+ import androidx.annotation.NonNull;
+ import androidx.recyclerview.widget.RecyclerView;
+-
+ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+ import com.google.firebase.firestore.DocumentSnapshot;
+Index: app/src/main/java/com/example/lifeline/InfoActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/lifeline/InfoActivity.java	(revision 02a2335bd275e4e56f63606508b971b6d82a5912)
++++ app/src/main/java/com/example/lifeline/InfoActivity.java	(date 1570359333534)
+@@ -21,10 +21,7 @@
+ import com.google.firebase.auth.FirebaseUser;
+ import com.google.firebase.firestore.DocumentReference;
+ import com.google.firebase.firestore.FirebaseFirestore;
+-
+-import java.text.SimpleDateFormat;
+ import java.util.Calendar;
+-import java.util.Date;
+ import java.util.regex.Matcher;
+ import java.util.regex.Pattern;
+ 
+Index: app/src/main/java/com/example/lifeline/LeaderboardActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/lifeline/LeaderboardActivity.java	(revision 02a2335bd275e4e56f63606508b971b6d82a5912)
++++ app/src/main/java/com/example/lifeline/LeaderboardActivity.java	(date 1570359333515)
+@@ -4,14 +4,10 @@
+ import androidx.recyclerview.widget.LinearLayoutManager;
+ import androidx.recyclerview.widget.RecyclerView;
+ 
+-import android.content.Intent;
+ import android.os.Bundle;
+-import android.widget.Toast;
+-
+ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+ import com.google.firebase.auth.FirebaseUser;
+ import com.google.firebase.firestore.CollectionReference;
+-import com.google.firebase.firestore.DocumentSnapshot;
+ import com.google.firebase.firestore.FirebaseFirestore;
+ import com.google.firebase.firestore.Query;
+ 
+Index: app/src/main/java/com/example/lifeline/RedeemActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/lifeline/RedeemActivity.java	(revision 02a2335bd275e4e56f63606508b971b6d82a5912)
++++ app/src/main/java/com/example/lifeline/RedeemActivity.java	(date 1570359333536)
+@@ -4,15 +4,11 @@
+ import androidx.appcompat.app.AppCompatActivity;
+ import androidx.recyclerview.widget.LinearLayoutManager;
+ import androidx.recyclerview.widget.RecyclerView;
+-
+-import android.content.Intent;
+ import android.os.Bundle;
+ import android.widget.Toast;
+-
+ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+ import com.google.android.gms.tasks.OnCompleteListener;
+ import com.google.android.gms.tasks.Task;
+-import com.google.firebase.auth.FirebaseUser;
+ import com.google.firebase.firestore.CollectionReference;
+ import com.google.firebase.firestore.DocumentSnapshot;
+ import com.google.firebase.firestore.FieldValue;
+@@ -22,7 +18,6 @@
+ public class RedeemActivity extends AppCompatActivity {
+ 
+     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+-    FirebaseUser user;
+     private CollectionReference userRef;
+     private RedeemAdapter adapter;
+     String uid;
