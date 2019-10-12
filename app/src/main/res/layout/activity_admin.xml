@@ -28,13 +28,23 @@
         style="@style/Button"/>
 
     <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Redeem Rewards"
+    android:drawablePadding="5pt"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="20pt"
+    android:id="@+id/adminRedeem"
+    style="@style/Button"/>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Redeem Rewards"
+        android:text="View Reports"
         android:drawablePadding="5pt"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20pt"
-        android:id="@+id/adminRedeem"
+        android:id="@+id/adminReport"
         style="@style/Button"/>
 
 </LinearLayout>

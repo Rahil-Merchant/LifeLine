@@ -3,10 +3,6 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.example.lifeline">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <dist:module dist:instant="true" />
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/lifeline_logo"
@@ -15,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RedeemActivity"></activity>
+        <activity
+            android:name=".adminReportActivity"
+            android:label="@string/title_activity_admin_report"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".RedeemActivity" />
         <activity android:name=".RewardsActivity" />
         <activity android:name=".LeaderboardActivity" />
         <activity
@@ -51,5 +51,9 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <dist:module dist:instant="true" />
 
 </manifest>

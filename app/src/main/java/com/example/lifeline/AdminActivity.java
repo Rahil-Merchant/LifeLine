@@ -31,5 +31,12 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(new Intent(AdminActivity.this, RedeemActivity.class));
             }
         });
+
+        findViewById(R.id.adminReport).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminActivity.this, adminReportActivity.class));
+            }
+        });
     }
 }

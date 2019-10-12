@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="#eee"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:padding="8dp"
+    app:cardElevation="3pt">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/adminReport_name"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:text="Rahil Merchant" />
+
+        <TextView
+            android:id="@+id/adminReport_emailTv"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/adminReport_name"
+            android:text="Email ID : "
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="7dp" />
+
+        <TextView
+            android:id="@+id/adminReport_email"
+            android:layout_marginTop="5dp"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/adminReport_name"
+            android:layout_toEndOf="@id/adminReport_emailTv"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="rahilmerchant99@gmail.com" />
+
+        <TextView
+            android:id="@+id/adminReport_mobile"
+            android:layout_width="wrap_content"
+            style="@style/TextView"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/adminReport_emailTv"
+            android:fontFamily="sans-serif-condensed-light"
+            android:drawableStart="@drawable/ic_call_black_24dp"
+            android:drawablePadding="5dp"
+            android:text="823645789"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            style="@style/TextView"
+            android:layout_below="@id/adminReport_mobile"
+            android:text="Date of Appointment : "
+            android:id="@+id/adminReport_rewards_doaTv"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            style="@style/TextView"
+            android:layout_below="@id/adminReport_mobile"
+            android:layout_toEndOf="@id/adminReport_rewards_doaTv"
+            android:text="30/10/2019"
+            android:fontFamily="sans-serif-condensed-light"
+            android:id="@+id/adminReport_rewards_doa"
+            />
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            style="@style/TextView"-->
+<!--            android:layout_below="@id/adminReport_rewards_doaTv"-->
+<!--            android:text="Times Donated : "-->
+<!--            android:id="@+id/adminReport_rewards_timesDonatedTv"-->
+<!--            />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            style="@style/TextView"-->
+<!--            android:layout_below="@id/adminReport_rewards_doaTv"-->
+<!--            android:layout_toEndOf="@id/adminReport_rewards_timesDonatedTv"-->
+<!--            android:text="6"-->
+<!--            android:fontFamily="sans-serif-condensed-light"-->
+<!--            android:id="@+id/adminReport_rewards_timesDonated"-->
+<!--            />-->
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

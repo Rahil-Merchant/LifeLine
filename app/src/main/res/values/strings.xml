@@ -2,28 +2,29 @@
     <string name="app_name">LifeLine</string>
     <string name="app_name_underlined">Life<u>Line</u></string>
 
+    <string name="title_logout">Logout</string>
+
+    <string name="title_leaderboard">Leaderboard</string>
+
+    <string name="title_history">Donation History</string>
+
+    <string name="title_donate">Donate</string>
+    <string name="title_events">Events</string>
+    <string name="title_rewards">My Rewards</string>
+    <string name="title_activity_admin_report">adminReportActivity</string>
     <string-array name="genders">
         <item>Male</item>
         <item>Female</item>
         <item>Other</item>
     </string-array>
-
     <string-array name="bloodGrp1string">
         <item>A</item>
         <item>B</item>
         <item>O</item>
         <item>AB</item>
     </string-array>
-
     <string-array name="bloodGrp2string">
         <item>+</item>
         <item>-</item>
     </string-array>
-
-    <string name="title_logout">Logout</string>
-    <string name="title_leaderboard">Leaderboard</string>
-    <string name="title_history">Donation History</string>
-    <string name="title_donate">Donate</string>
-    <string name="title_events">Events</string>
-    <string name="title_rewards">My Rewards</string>
 </resources>

@@ -4,37 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RedeemActivity">//Change
+    tools:context=".adminReportActivity">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <RelativeLayout
+            android:id="@+id/admin_report_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/redeem_header">
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Select user whose reward is to be redeemed:"
-                android:layout_alignParentStart="true"
-                style="@style/TextView"
-                android:layout_marginTop="4pt"
-                android:layout_marginBottom="4pt"
-                android:layout_marginLeft="20dp"
-                />
         </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/Redeem_recycler_view"
+            android:id="@+id/admin_report_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/redeem_header"/>
+            android:layout_below="@id/admin_report_header"/>
+<!--            app:layout_anchor="@+id/relativeLayout"-->
+<!--            app:layout_anchorGravity="center" />-->
+
 
     </RelativeLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
