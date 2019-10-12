@@ -20,14 +20,27 @@ public class adminReportAdapter extends FirestoreRecyclerAdapter<adminReport, ad
         super(options);
     }
 
+    /*@Override
+    protected void onBindViewHolder(@NonNull adminReportHolder adminReportHolder, int i, @NonNull adminReport adminReport) {
+        String name = adminReport.getFname() + ' ' + adminReport.getMname() + ' ' + adminReport.getLname();
+        adminReportHolder.name_tv.setText(name);
+        adminReportHolder.email_tv.setText(adminReport.getEmail());
+        adminReportHolder.mobile_tv.setText(String.valueOf(adminReport.getMobNo()));
+        adminReportHolder.doa_tv.setText(adminReport.getDoa());
+        adminReportHolder.timeSlot_tv.setText(adminReport.getTimeSlot());
+//        adminReportHolder.timesDonatedTv.setText(String.valueOf(adminReport.getTimesDonated()));
+//        adminReportHolder.rewards_countTv.setText(String.valueOf(adminReport.getRewards_count()));
+    }
+    */
+
     @Override
     protected void onBindViewHolder(@NonNull adminReportAdapter.adminReportHolder adminReportHolder, int i, @NonNull adminReport adminReport) {
         String name = adminReport.getFname() + ' ' + adminReport.getMname() + ' ' + adminReport.getLname();
         adminReportHolder.name_tv.setText(name);
         adminReportHolder.email_tv.setText(adminReport.getEmail());
-        adminReportHolder.mobile_tv.setText(String.valueOf(adminReport.getMobNo()));
-//        adminReportHolder.timesDonatedTv.setText(String.valueOf(adminReport.getTimesDonated()));
-//        adminReportHolder.rewards_countTv.setText(String.valueOf(adminReport.getRewards_count()));
+       // adminReportHolder.mobile_tv.setText(String.valueOf(adminReport.getMobNo()));
+        adminReportHolder.doa_tv.setText(adminReport.getDoa());
+        adminReportHolder.timeSlot_tv.setText(adminReport.getTimeSlot());
     }
 
     @NonNull
@@ -42,8 +55,8 @@ public class adminReportAdapter extends FirestoreRecyclerAdapter<adminReport, ad
         TextView name_tv;
         TextView mobile_tv;
         TextView email_tv;
-//        TextView timesDonatedTv;
-//        TextView rewards_countTv;
+        TextView doa_tv;
+        TextView timeSlot_tv;
 
 
         public adminReportHolder(@NonNull View itemView) {
@@ -51,9 +64,9 @@ public class adminReportAdapter extends FirestoreRecyclerAdapter<adminReport, ad
 
             name_tv=itemView.findViewById(R.id.adminReport_name);
             mobile_tv=itemView.findViewById(R.id.adminReport_mobile);
-//            timesDonatedTv=itemView.findViewById(R.id.redeem_rewards_timesDonated);
-//            rewards_countTv=itemView.findViewById(R.id.redeem_rewards_count);
             email_tv=itemView.findViewById(R.id.adminReport_email);
+            doa_tv=itemView.findViewById(R.id.adminReport_rewards_doa);
+            timeSlot_tv=itemView.findViewById(R.id.adminReport_timeSlot);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

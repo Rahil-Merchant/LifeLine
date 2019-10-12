@@ -56,6 +56,7 @@
             android:layout_below="@id/adminReport_emailTv"
             android:fontFamily="sans-serif-condensed-light"
             android:drawableStart="@drawable/ic_call_black_24dp"
+            android:gravity="center_vertical"
             android:drawablePadding="5dp"
             android:text="823645789"/>
 
@@ -79,6 +80,20 @@
             android:text="30/10/2019"
             android:fontFamily="sans-serif-condensed-light"
             android:id="@+id/adminReport_rewards_doa"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextView"
+            android:layout_below="@id/adminReport_rewards_doa"
+            android:text="7-9 AM"
+            android:gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/ic_access_time_black_24dp"
+            android:drawablePadding="5dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:id="@+id/adminReport_timeSlot"
             />
 
 <!--        <TextView-->
