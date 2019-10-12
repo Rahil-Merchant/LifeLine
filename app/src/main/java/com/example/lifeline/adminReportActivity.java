@@ -37,13 +37,16 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class adminReportActivity extends AppCompatActivity {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference userRef;
     private adminReportAdapter adapter;
     String uid;
-
+    DocumentSnapshot reportSnapshot;
     Uri pdfUri;
     FirebaseStorage storage;
     FirebaseDatabase database;
@@ -63,7 +66,7 @@ public class adminReportActivity extends AppCompatActivity {
         database=FirebaseDatabase.getInstance();
 }
     private void setUpRecyclerView() {
-        Query query = userRef.orderBy("doa", Query.Direction.DESCENDING).whereEqualTo("isAccepted",true);
+        Query query = userRef.whereEqualTo("isAccepted",true);
 
         FirestoreRecyclerOptions<adminReport> options= new FirestoreRecyclerOptions.Builder<adminReport>()
                 .setQuery(query,adminReport.class)
@@ -77,6 +80,7 @@ public class adminReportActivity extends AppCompatActivity {
         adapter.setOnClickListener(new adminReportAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
+                reportSnapshot = documentSnapshot;
                 if(ContextCompat.checkSelfPermission(adminReportActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)== PackageManager.PERMISSION_GRANTED) {
                     selectPDF();
                 }
@@ -84,7 +88,6 @@ public class adminReportActivity extends AppCompatActivity {
                     ActivityCompat.requestPermissions(adminReportActivity.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},2);
             }
         });
-
     }
 
     @Override
@@ -150,9 +153,9 @@ public class adminReportActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(adminReportActivity.this, "File successfully uploaded " + url, Toast.LENGTH_LONG).show();
-
-                                } else
-                                    Toast.makeText(adminReportActivity.this, "File not successfully uploaded", Toast.LENGTH_SHORT).show();
+                                    //addUserDoc();
+                                } //else
+                                    //Toast.makeText(adminReportActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
@@ -168,10 +171,40 @@ public class adminReportActivity extends AppCompatActivity {
                 progressDialog.setProgress(currentProgress);
                 if (currentProgress == 100) {
                     progressDialog.cancel();
-                    Toast.makeText(adminReportActivity.this, "File successfully uploaded", Toast.LENGTH_SHORT).show();
+                    addUserDoc();
+                    //Toast.makeText(adminReportActivity.this, "File successfully uploaded", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
+
+    void addUserDoc(){
+        uid = reportSnapshot.getString("uid");
+        String applId = reportSnapshot.getId();
+        String timeSlot = reportSnapshot.getString("timeSlot");
+        String repdoc = reportSnapshot.getString("repdoc");
+        String doa = reportSnapshot.getString("doa");
+        Map<String, Object> userReport = new HashMap<>();
+        userReport.put("timeSlot", timeSlot);
+        userReport.put("repdoc", repdoc);
+        userReport.put("doa", doa);
+        db.collection("users").document(uid)
+                .collection("history")
+                .document(applId)
+                .set(userReport)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        finish();
+                        Toast.makeText(adminReportActivity.this, "Report Delivered to User", Toast.LENGTH_LONG).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(adminReportActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
 

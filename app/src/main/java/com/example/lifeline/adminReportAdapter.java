@@ -20,25 +20,12 @@ public class adminReportAdapter extends FirestoreRecyclerAdapter<adminReport, ad
         super(options);
     }
 
-    /*@Override
-    protected void onBindViewHolder(@NonNull adminReportHolder adminReportHolder, int i, @NonNull adminReport adminReport) {
-        String name = adminReport.getFname() + ' ' + adminReport.getMname() + ' ' + adminReport.getLname();
-        adminReportHolder.name_tv.setText(name);
-        adminReportHolder.email_tv.setText(adminReport.getEmail());
-        adminReportHolder.mobile_tv.setText(String.valueOf(adminReport.getMobNo()));
-        adminReportHolder.doa_tv.setText(adminReport.getDoa());
-        adminReportHolder.timeSlot_tv.setText(adminReport.getTimeSlot());
-//        adminReportHolder.timesDonatedTv.setText(String.valueOf(adminReport.getTimesDonated()));
-//        adminReportHolder.rewards_countTv.setText(String.valueOf(adminReport.getRewards_count()));
-    }
-    */
-
     @Override
     protected void onBindViewHolder(@NonNull adminReportAdapter.adminReportHolder adminReportHolder, int i, @NonNull adminReport adminReport) {
         String name = adminReport.getFname() + ' ' + adminReport.getMname() + ' ' + adminReport.getLname();
         adminReportHolder.name_tv.setText(name);
         adminReportHolder.email_tv.setText(adminReport.getEmail());
-       // adminReportHolder.mobile_tv.setText(String.valueOf(adminReport.getMobNo()));
+        adminReportHolder.mobile_tv.setText(String.valueOf(adminReport.getMobNo()));
         adminReportHolder.doa_tv.setText(adminReport.getDoa());
         adminReportHolder.timeSlot_tv.setText(adminReport.getTimeSlot());
     }

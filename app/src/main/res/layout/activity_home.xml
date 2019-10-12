@@ -49,6 +49,17 @@
         android:id="@+id/homeRewards"
         style="@style/Button"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_history"
+        android:drawableEnd="@drawable/ic_history_white_24dp"
+        android:drawablePadding="5pt"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20pt"
+        android:id="@+id/homeHistory"
+        style="@style/Button"/>
+
 
 
 </LinearLayout>
