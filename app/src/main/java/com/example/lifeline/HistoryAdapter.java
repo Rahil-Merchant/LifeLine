@@ -50,8 +50,8 @@ public class HistoryAdapter extends FirestoreRecyclerAdapter<History, HistoryAda
         public HistoryHolder(@NonNull View itemView) {
             super(itemView);
 
-            timeSlot_tv = itemView.findViewById(R.id.leaderboard_name);
-            doa_tv = itemView.findViewById(R.id.leaderboard_timesDonated);
+            timeSlot_tv = itemView.findViewById(R.id.history_timeSlot);
+            doa_tv = itemView.findViewById(R.id.history_doa);
             download_btn=itemView.findViewById(R.id.history_download);
 
         }
