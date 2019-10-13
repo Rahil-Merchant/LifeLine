@@ -7,15 +7,6 @@
     tools:context=".homeActivity"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home Page"
-        android:layout_marginTop="80pt"
-        android:layout_gravity="center_horizontal"
-        style="@style/TextView"
-        />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,6 +49,17 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20pt"
         android:id="@+id/homeHistory"
+        style="@style/Button"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Information"
+        android:drawableEnd="@drawable/ic_mode_edit_black_24dp"
+        android:drawablePadding="5pt"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20pt"
+        android:id="@+id/homeEdit"
         style="@style/Button"/>
 
 

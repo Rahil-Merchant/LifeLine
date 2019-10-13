@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -43,6 +44,13 @@ public class homeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(homeActivity.this, HistoryActivity.class));
+            }
+        });
+
+        findViewById(R.id.homeEdit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(homeActivity.this, EditInfoActivity.class));
             }
         });
     }
