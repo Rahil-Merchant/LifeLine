@@ -106,24 +106,28 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (email.isEmpty()) {
             inEmailEt.setError("Email is required");
             inEmailEt.requestFocus();
+            Pbar.setVisibility(View.GONE);
             return;
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             inEmailEt.setError("Please enter a valid email");
             inEmailEt.requestFocus();
+            Pbar.setVisibility(View.GONE);
             return;
         }
 
         if (password.isEmpty()) {
             inPasswordEt.setError("Password is required");
             inPasswordEt.requestFocus();
+            Pbar.setVisibility(View.GONE);
             return;
         }
 
         if (password.length() < 6) {
             inPasswordEt.setError("Password must contain at least 6 characters");
             inPasswordEt.requestFocus();
+            Pbar.setVisibility(View.GONE);
             return;
         }
 

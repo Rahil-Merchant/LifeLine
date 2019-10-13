@@ -45,30 +45,35 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         if (email.isEmpty()) {
             upEmailEt.setError("Email is required");
             upEmailEt.requestFocus();
+            upPbar.setVisibility(View.GONE);
             return;
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             upEmailEt.setError("Please enter a valid email");
             upEmailEt.requestFocus();
+            upPbar.setVisibility(View.GONE);
             return;
         }
 
         if (password.isEmpty()) {
             upPasswordEt.setError("Password is required");
             upPasswordEt.requestFocus();
+            upPbar.setVisibility(View.GONE);
             return;
         }
 
         if (password.length() < 6) {
             upPasswordEt.setError("Password must contain at least 6 characters");
             upPasswordEt.requestFocus();
+            upPbar.setVisibility(View.GONE);
             return;
         }
 
         if(!confPassword.equals(password)){
             upConfirmPasswordEt.setError("Passwords do not match");
             upConfirmPasswordEt.requestFocus();
+            upPbar.setVisibility(View.GONE);
             return;
         }
 
