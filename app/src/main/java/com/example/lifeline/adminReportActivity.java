@@ -66,7 +66,7 @@ public class adminReportActivity extends AppCompatActivity {
         database=FirebaseDatabase.getInstance();
 }
     private void setUpRecyclerView() {
-        Query query = userRef.whereEqualTo("isAccepted",true);
+        Query query = userRef.whereEqualTo("isAccepted",true).whereEqualTo("reqReport",true);
 
         FirestoreRecyclerOptions<adminReport> options= new FirestoreRecyclerOptions.Builder<adminReport>()
                 .setQuery(query,adminReport.class)

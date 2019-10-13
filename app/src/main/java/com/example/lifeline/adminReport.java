@@ -3,13 +3,13 @@ package com.example.lifeline;
 public class adminReport {
     private String email, fname, mname, lname, gender, occupation, organization, mobNo, bloodGrp, dob, last_donated, uid, doa, repdoc, timeSlot;
     private int timesDonated, rewards_count;
-    Boolean isAccepted;
+    Boolean isAccepted,reqReport;
 
     public adminReport() {
 
     }
 
-    public adminReport(String email, String fname, String mname, String lname, String gender, String occupation, String organization, String mobNo, String bloodGrp, String dob, String last_donated, String uid, String doa, String repdoc, String timeSlot, int timesDonated, int rewards_count, Boolean isAccepted) {
+    public adminReport(String email, String fname, String mname, String lname, String gender, String occupation, String organization, String mobNo, String bloodGrp, String dob, String last_donated, String uid, String doa, String repdoc, String timeSlot, int timesDonated, int rewards_count, Boolean isAccepted, Boolean reqReport) {
         this.email = email;
         this.fname = fname;
         this.mname = mname;
@@ -28,6 +28,7 @@ public class adminReport {
         this.timesDonated = timesDonated;
         this.rewards_count = rewards_count;
         this.isAccepted = isAccepted;
+        this.reqReport = reqReport;
     }
 
     public String getEmail() {
@@ -100,5 +101,9 @@ public class adminReport {
 
     public Boolean getAccepted() {
         return isAccepted;
+    }
+
+    public Boolean getReqReport() {
+        return reqReport;
     }
 }
