@@ -13,23 +13,43 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.DocumentSnapshot;
 
-public class PendingApplicationsAdapter extends FirestoreRecyclerAdapter<adminReport, PendingApplicationsAdapter.PendingApplicationsHolder> {
+public class PendingApplicationsAdapter extends FirestoreRecyclerAdapter<PendingApplications, PendingApplicationsAdapter.PendingApplicationsHolder> {
 
     private OnItemClickListener listener;
-    public PendingApplicationsAdapter(@NonNull FirestoreRecyclerOptions<adminReport> options) {
+    public PendingApplicationsAdapter(@NonNull FirestoreRecyclerOptions<PendingApplications> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull PendingApplicationsAdapter.PendingApplicationsHolder pendingApplicationsHolder, int i, @NonNull adminReport adminReport) {
-        String name = adminReport.getFname() + ' ' + adminReport.getMname() + ' ' + adminReport.getLname();
+    protected void onBindViewHolder(@NonNull PendingApplicationsHolder pendingApplicationsHolder, int i, @NonNull PendingApplications pendingApplications) {
+        String name = pendingApplications.getFname() + ' ' + pendingApplications.getMname() + ' ' + pendingApplications.getLname();
         pendingApplicationsHolder.name_tv.setText(name);
-        pendingApplicationsHolder.email_tv.setText(adminReport.getEmail());
-        pendingApplicationsHolder.mobile_tv.setText(String.valueOf(adminReport.getMobNo()));
-        pendingApplicationsHolder.timeSlot_tv.setText(adminReport.getTimeSlot());
-        pendingApplicationsHolder.organization_tv.setText(adminReport.getOrganization());
-        pendingApplicationsHolder.occupation_tv.setText(adminReport.getOccupation());
+        pendingApplicationsHolder.email_tv.setText(pendingApplications.getEmail());
+        pendingApplicationsHolder.mobile_tv.setText(String.valueOf(pendingApplications.getMobNo()));
+        String appointment = pendingApplications.getDoa() + " from " +pendingApplications.getTimeSlot();
+        pendingApplicationsHolder.timeSlot_tv.setText(appointment);
+        pendingApplicationsHolder.organization_tv.setText(pendingApplications.getOrganization());
+        pendingApplicationsHolder.occupation_tv.setText(pendingApplications.getOccupation());
+        pendingApplicationsHolder.gender_tv.setText(pendingApplications.getGender());
+        pendingApplicationsHolder.dob_tv.setText(pendingApplications.getDob());
+        pendingApplicationsHolder.bloodGrp_tv.setText(pendingApplications.getBloodGrp());
     }
+
+//
+//    @Override
+//    protected void onBindViewHolder(@NonNull PendingApplicationsAdapter.PendingApplicationsHolder pendingApplicationsHolder, int i, @NonNull adminReport adminReport) {
+//        String name = adminReport.getFname() + ' ' + adminReport.getMname() + ' ' + adminReport.getLname();
+//        pendingApplicationsHolder.name_tv.setText(name);
+//        pendingApplicationsHolder.email_tv.setText(adminReport.getEmail());
+//        pendingApplicationsHolder.mobile_tv.setText(String.valueOf(adminReport.getMobNo()));
+//        String appointment = adminReport.getDoa() + " at " +adminReport.getTimeSlot();
+//        pendingApplicationsHolder.timeSlot_tv.setText(appointment);
+//        pendingApplicationsHolder.organization_tv.setText(adminReport.getOrganization());
+//        pendingApplicationsHolder.occupation_tv.setText(adminReport.getOccupation());
+//        pendingApplicationsHolder.gender_tv.setText(adminReport.getGender());
+//        pendingApplicationsHolder.dob_tv.setText(adminReport.getDob());
+//        pendingApplicationsHolder.bloodGrp_tv.setText(adminReport.getBloodGrp());
+//    }
 
     @NonNull
     @Override
@@ -46,6 +66,9 @@ public class PendingApplicationsAdapter extends FirestoreRecyclerAdapter<adminRe
         TextView timeSlot_tv;
         TextView organization_tv;
         TextView occupation_tv;
+        TextView gender_tv;
+        TextView dob_tv;
+        TextView bloodGrp_tv;
         Button donated_btn;
 
 
@@ -59,6 +82,9 @@ public class PendingApplicationsAdapter extends FirestoreRecyclerAdapter<adminRe
             organization_tv = itemView.findViewById(R.id.pending_organization);
             occupation_tv = itemView.findViewById(R.id.pending_occupation);
             donated_btn = itemView.findViewById(R.id.pending_donated);
+            dob_tv = itemView.findViewById(R.id.pending_dob);
+            gender_tv = itemView.findViewById(R.id.pending_gender);
+            bloodGrp_tv = itemView.findViewById(R.id.pending_bloodGrp);
 
             donated_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
