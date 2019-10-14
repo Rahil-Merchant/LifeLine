@@ -25,13 +25,19 @@ public class HistoryAdapter extends FirestoreRecyclerAdapter<History, HistoryAda
         final String repdoc = history.getRepdoc();
         historyHolder.doa_tv.setText(history.getDoa());
         historyHolder.timeSlot_tv.setText(history.getTimeSlot());
-        historyHolder.download_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(repdoc));
-                view.getContext().startActivity(browserIntent);
-            }
-        });
+        if(!(repdoc.equals("no"))){
+            historyHolder.download_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(repdoc));
+                    view.getContext().startActivity(browserIntent);
+                }
+            });
+        }
+        else{
+            historyHolder.download_btn.setVisibility(View.GONE);
+        }
+
     }
 
     @NonNull

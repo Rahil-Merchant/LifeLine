@@ -73,7 +73,7 @@ public class EditInfoActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 gender=genderSp.getSelectedItem().toString();
-                Toast.makeText(EditInfoActivity.this, gender, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(EditInfoActivity.this, gender, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -86,7 +86,7 @@ public class EditInfoActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 bloodGrp1=bloodGrpSp1.getSelectedItem().toString();
-                Toast.makeText(EditInfoActivity.this, bloodGrp1, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(EditInfoActivity.this, bloodGrp1, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -99,7 +99,7 @@ public class EditInfoActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 bloodGrp2=bloodGrpSp2.getSelectedItem().toString();
-                Toast.makeText(EditInfoActivity.this, bloodGrp2, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(EditInfoActivity.this, bloodGrp2, Toast.LENGTH_SHORT).show();
             }
 
             @Override

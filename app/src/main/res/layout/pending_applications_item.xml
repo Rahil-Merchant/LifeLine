@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="#eee"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:padding="8dp"
+    app:cardElevation="3pt">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/pending_name"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:text="Rahil Merchant" />
+
+        <TextView
+            android:id="@+id/pending_emailTv"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pending_name"
+            android:text="Email ID : "
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="7dp" />
+
+        <TextView
+            android:id="@+id/pending_email"
+            android:layout_marginTop="5dp"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pending_name"
+            android:layout_toEndOf="@id/pending_emailTv"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="rahilmerchant99@gmail.com" />
+
+        <TextView
+            android:id="@+id/pending_mobile"
+            android:layout_width="wrap_content"
+            style="@style/TextView"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pending_emailTv"
+            android:fontFamily="sans-serif-condensed-light"
+            android:drawableStart="@drawable/ic_call_black_24dp"
+            android:gravity="center_vertical"
+            android:drawablePadding="5dp"
+            android:text="823645789"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextView"
+            android:layout_below="@+id/pending_mobile"
+            android:text="Occupation : "
+            android:id="@+id/pending_occupationTv"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-light"
+            style="@style/TextView"
+            android:layout_below="@+id/pending_mobile"
+            android:text="Student"
+            android:id="@+id/pending_occupation"
+            android:layout_toEndOf="@id/pending_occupationTv"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextView"
+            android:layout_below="@+id/pending_occupationTv"
+            android:text="Organization : "
+            android:id="@+id/pending_organizationTv"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-light"
+            style="@style/TextView"
+            android:layout_below="@+id/pending_occupationTv"
+            android:text="NMIMS"
+            android:id="@+id/pending_organization"
+            android:layout_toEndOf="@id/pending_organizationTv"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextView"
+            android:layout_below="@id/pending_organizationTv"
+            android:text="7-9 AM"
+            android:gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/ic_access_time_black_24dp"
+            android:drawablePadding="5dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:id="@+id/pending_timeSlot"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="15pt"
+            android:drawableRight="@drawable/ic_check_white_24dp"
+            android:layout_below="@id/pending_timeSlot"
+            android:layout_marginTop="5dp"
+            android:drawablePadding="3pt"
+            android:text="Donated"
+            style="@style/Button"
+            android:id="@+id/pending_donated"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

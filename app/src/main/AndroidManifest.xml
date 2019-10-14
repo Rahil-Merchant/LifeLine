@@ -16,8 +16,11 @@
         android:roundIcon="@drawable/lifeline_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditInfoActivity"
+        <activity android:name=".PendingApplicationsActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".EditInfoActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".HistoryActivity"
             android:screenOrientation="portrait" />

@@ -38,5 +38,12 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(new Intent(AdminActivity.this, adminReportActivity.class));
             }
         });
+
+        findViewById(R.id.adminPending).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminActivity.this, PendingApplicationsActivity.class));
+            }
+        });
     }
 }
