@@ -49,6 +49,7 @@ public class LeaderboardActivity extends AppCompatActivity {
                 case R.id.navigation_appointment:
                     break;
                 case R.id.navigation_events:
+                    startActivity(new Intent(LeaderboardActivity.this,UserEventMain.class));
                     break;
                 case R.id.navigation_leaderboard:
                     startActivity(new Intent(LeaderboardActivity.this,LeaderboardActivity.class));

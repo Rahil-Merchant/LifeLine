@@ -89,6 +89,7 @@ public class homeActivity extends AppCompatActivity {
                 case R.id.navigation_appointment:
                     break;
                 case R.id.navigation_events:
+                    startActivity(new Intent(homeActivity.this,UserEventMain.class));
                     break;
                 case R.id.navigation_leaderboard:
                     startActivity(new Intent(homeActivity.this,LeaderboardActivity.class));
