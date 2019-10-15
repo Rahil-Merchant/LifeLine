@@ -205,30 +205,30 @@ public class NewEventActivity extends AppCompatActivity implements OnMapReadyCal
         BannerImage.setOnClickListener(new View.OnClickListener() {
                                            @Override
                                            public void onClick(View view) {
-                                               if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+               if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
-                                                   if (ContextCompat.checkSelfPermission(NewEventActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                   if (ContextCompat.checkSelfPermission(NewEventActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
 
-                                                       Toast.makeText(NewEventActivity.this, "Permission Confirmed", Toast.LENGTH_LONG).show();
-                                                       ActivityCompat.requestPermissions(NewEventActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+                       Toast.makeText(NewEventActivity.this, "Permission Confirmed", Toast.LENGTH_LONG).show();
+                       ActivityCompat.requestPermissions(NewEventActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
 
-                                                   } else {
+                   } else {
 
-                                                       choseImage();
+                       choseImage();
 
-                                                   }
+                   }
 
-                                               } else {
+               } else {
 
-                                                   choseImage();
+                   choseImage();
 
-                                               }
+               }
 
-                                           }
+           }
 
 
 
-                                       }
+       }
 
         );
         firebaseFirestore = FirebaseFirestore.getInstance();

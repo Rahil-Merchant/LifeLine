@@ -21,18 +21,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title_leaderboard"
-        android:drawableEnd="@drawable/ic_format_list_numbered_black_24dp"
-        android:drawablePadding="5pt"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20pt"
-        android:id="@+id/homeLeader"
-        style="@style/Button"
-        android:visibility="gone"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/title_rewards"
         android:drawableEnd="@drawable/ic_card_giftcard_white_24dp"
         android:drawablePadding="5pt"
@@ -63,25 +51,6 @@
         android:id="@+id/homeEdit"
         style="@style/Button"/>
 
-    <Button
-    android:id="@+id/homePayTM"
-    style="@style/Button"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:layout_marginTop="20pt"
-    android:drawablePadding="5pt"
-    android:text="PayTM" />
-
-    <Button
-        android:id="@+id/homeBook"
-        style="@style/Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20pt"
-        android:drawablePadding="5pt"
-        android:text="Book Appointment" />
 
     <RelativeLayout
         android:layout_width="wrap_content"

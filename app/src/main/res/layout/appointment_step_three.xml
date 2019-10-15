@@ -60,4 +60,13 @@
             />
     </androidx.cardview.widget.CardView>
 
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/appointment_pBar"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        style="@android:style/Widget.ProgressBar.Inverse"
+        android:visibility="gone"/>
+
 </RelativeLayout>

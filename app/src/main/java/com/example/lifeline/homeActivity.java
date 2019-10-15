@@ -19,7 +19,7 @@ public class homeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        setTitle("Home");
+        setTitle("My Profile");
 
         BottomNavigationView bottomNav=findViewById(R.id.bottom_nav);
         bottomNav.setOnNavigationItemSelectedListener(navListner);
@@ -33,13 +33,6 @@ public class homeActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 finish();
                 startActivity(new Intent(homeActivity.this, LoginActivity.class));
-            }
-        });
-
-        findViewById(R.id.homeLeader).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(homeActivity.this, LeaderboardActivity.class));
             }
         });
 
@@ -64,19 +57,7 @@ public class homeActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.homePayTM).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(homeActivity.this, PaytmActivity.class));
-            }
-        });
 
-        findViewById(R.id.homeBook).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(homeActivity.this, BookingActivity.class));
-            }
-        });
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListner=new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -84,9 +65,10 @@ public class homeActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()){
                 case R.id.navigation_profile:
-                    startActivity(new Intent(homeActivity.this,homeActivity.class));
+                    // do nothing
                     break;
                 case R.id.navigation_appointment:
+                    startActivity(new Intent(homeActivity.this, BookingActivity.class));
                     break;
                 case R.id.navigation_events:
                     startActivity(new Intent(homeActivity.this,UserEventMain.class));

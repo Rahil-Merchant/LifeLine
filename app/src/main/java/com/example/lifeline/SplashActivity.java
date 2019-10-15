@@ -38,7 +38,10 @@ public class SplashActivity extends AppCompatActivity {
         // int camera = ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA);
         // int wstorage = ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
         // int rstorage = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
-        // int rphoneState = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
+//        // int rphoneState = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
+//        int cLocation = ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_COARSE_LOCATION);
+//        int fLocation = ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION);
+
         List<String> listPermissionsNeeded = new ArrayList<>();
         /*if (camera != PackageManager.PERMISSION_GRANTED) {
             listPermissionsNeeded.add(android.Manifest.permission.CAMERA);
@@ -55,6 +58,14 @@ public class SplashActivity extends AppCompatActivity {
         {
             listPermissionsNeeded.add(Manifest.permission.READ_PHONE_STATE);
         }*/
+
+//        if(cLocation != PackageManager.PERMISSION_GRANTED){
+//            listPermissionsNeeded.add(Manifest.permission.ACCESS_COARSE_LOCATION);
+//        }
+//
+//        if(fLocation != PackageManager.PERMISSION_GRANTED){
+//            listPermissionsNeeded.add(Manifest.permission.ACCESS_FINE_LOCATION);
+//        }
 
         if (!listPermissionsNeeded.isEmpty()) {
             ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray

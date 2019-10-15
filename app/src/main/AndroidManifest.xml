@@ -11,13 +11,18 @@
         android:roundIcon="@drawable/lifeline_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserEventMain"></activity>
+        <activity android:name=".UserEventMain"
+          android:screenOrientation="portrait"/>
 
-        <activity android:name=".Event_Inside_Main" />
+        <activity android:name=".Event_Inside_Main"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".UserEventMain"/>
 
-        <activity android:name=".NewEventActivity" />
+        <activity android:name=".NewEventActivity"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".HospitalEventMain" />
+        <activity android:name=".HospitalEventMain"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".PaytmActivity"
             android:screenOrientation="portrait" />

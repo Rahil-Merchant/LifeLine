@@ -1,5 +1,6 @@
 package com.example.lifeline;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
@@ -8,10 +9,14 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.shuhart.stepview.StepView;
 
 import java.util.ArrayList;
@@ -33,11 +38,17 @@ public class BookingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
+        setTitle("Book Appointment");
+        BottomNavigationView bottomNav=findViewById(R.id.bottom_nav);
+        bottomNav.setOnNavigationItemSelectedListener(navListner);
+        Menu menu =bottomNav.getMenu();
+        MenuItem menuItem=menu.getItem(1);
+        menuItem.setChecked(true);
         ButterKnife.bind(BookingActivity.this);
-        stepView = (StepView) findViewById(R.id.step_view);
-        viewPager = (ViewPager)findViewById(R.id.view_pager);
-        btn_prev_step = (Button)findViewById(R.id.btn_previous_step);
-        btn_next_step = (Button)findViewById(R.id.btn_next_step);
+        stepView = findViewById(R.id.step_view);
+        viewPager = findViewById(R.id.view_pager);
+        btn_prev_step = findViewById(R.id.btn_previous_step);
+        btn_next_step = findViewById(R.id.btn_next_step);
         btn_prev_step.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,4 +131,26 @@ public class BookingActivity extends AppCompatActivity {
         stepList.add("Confirmation");
         stepView.setSteps(stepList);
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListner=new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()){
+                case R.id.navigation_profile:
+                    startActivity(new Intent(BookingActivity.this,homeActivity.class));
+                    break;
+                case R.id.navigation_appointment:
+                    // do nothing
+                    break;
+                case R.id.navigation_events:
+                    startActivity(new Intent(BookingActivity.this,UserEventMain.class));
+                    break;
+                case R.id.navigation_leaderboard:
+                    startActivity(new Intent(BookingActivity.this,LeaderboardActivity.class));
+                    break;
+
+            }
+            return true;
+        }
+    };
 }

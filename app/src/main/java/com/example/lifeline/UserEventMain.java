@@ -63,9 +63,10 @@ public class UserEventMain extends AppCompatActivity {
                     startActivity(new Intent(UserEventMain.this,homeActivity.class));
                     break;
                 case R.id.navigation_appointment:
+                    startActivity(new Intent(UserEventMain.this,BookingActivity.class));
                     break;
                 case R.id.navigation_events:
-                    startActivity(new Intent(UserEventMain.this,UserEventMain.class));
+                    // do nothing
                     break;
                 case R.id.navigation_leaderboard:
                     startActivity(new Intent(UserEventMain.this,LeaderboardActivity.class));
