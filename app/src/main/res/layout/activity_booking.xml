@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".BookingActivity">
+
+    <com.shuhart.stepview.StepView
+        android:id="@+id/step_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:sv_selectedCircleColor="#D32F2F"
+        app:sv_selectedTextColor="#D32F2F"
+        app:sv_stepLineWidth="1dp"
+        app:sv_stepPadding="12dp"
+        app:sv_nextTextColor="#D32F2F"
+        app:sv_nextStepLineColor="#D32F2F"
+        app:sv_doneCircleColor="#D32F2F"
+        app:sv_doneStepLineColor="#D32F2F"
+        app:sv_doneCircleRadius="12dp"
+        app:sv_selectedCircleRadius="12dp"
+        app:sv_selectedStepNumberColor="#FFFFFF"
+        app:sv_stepViewStyle="@style/StepView"
+        app:sv_doneStepMarkColor="#FFFFFF"
+        app:sv_stepNumberTextSize="12sp"
+        app:sv_animationType="None"
+        app:sv_typeface="@font/montserrat"/>
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/view_pager"
+        android:layout_below="@id/step_view"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_button"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:padding="4dp"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_previous_step"
+            android:text="Previous"
+            android:enabled="false"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:background="#D32F2F"
+            android:layout_above="@+id/txt_skip"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_next_step"
+            android:text="Next"
+
+            android:fontFamily="@font/montserrat"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:background="#D32F2F"
+            android:layout_above="@+id/txt_skip"/>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

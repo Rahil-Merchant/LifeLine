@@ -21,8 +21,11 @@
         android:theme="@style/AppTheme">
         <activity android:name=".PaytmActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".PendingApplicationsActivity"
+        <activity android:name=".BookingActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".PendingApplicationsActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".EditInfoActivity"
             android:screenOrientation="portrait" />

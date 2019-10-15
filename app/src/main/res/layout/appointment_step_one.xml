@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick a date"
+        android:fontFamily="@font/montserrat"
+        android:textSize="20dp"
+        android:id="@+id/pickadate"
+        android:textColor="#D32F2F"
+        />
+
+    <devs.mulham.horizontalcalendar.HorizontalCalendarView
+        android:id="@+id/calendarView"
+        android:layout_below="@+id/pickadate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D32F2F"
+        app:textColorNormal="@android:color/white"
+        app:textColorSelected="#FAD644"
+        android:layout_marginTop="10dp"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick a time"
+        android:fontFamily="@font/montserrat"
+        android:textSize="20dp"
+        android:id="@+id/pickatime"
+        android:layout_below="@+id/calendarView"
+        android:textColor="#D32F2F"
+        android:layout_marginTop="30dp"/>
+
+
+
+    <com.jaredrummler.materialspinner.MaterialSpinner
+        android:id="@+id/spinner"
+        android:text="Choose a time Slot"
+        android:layout_below="@+id/pickatime"
+        android:layout_marginTop="10dp"
+        app:ms_background_color="#D32F2F"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/montserrat"
+        />
+
+
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="3dp"
+        android:id="@+id/option_one"
+        app:cardBackgroundColor="@color/red"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blood Donation"
+            android:fontFamily="@font/montserrat"
+            android:padding="3dp"
+            android:textSize="40dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OR"
+        android:textColor="@color/red"
+        android:textSize="40dp"
+        android:layout_below="@id/option_one"
+        android:layout_marginTop="25dp"
+        android:gravity="center_horizontal"
+        android:id="@+id/or"
+        />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="3dp"
+        android:id="@+id/option_two"
+        android:layout_below="@id/or"
+        app:cardBackgroundColor="@color/red"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Blood Report - Rs 500"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center_horizontal"
+            android:textSize="40dp"
+            android:textColor="#FFFFFF"
+            android:padding="3dp"
+            />
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

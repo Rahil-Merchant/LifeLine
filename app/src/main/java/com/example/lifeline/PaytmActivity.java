@@ -36,11 +36,29 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTransactionCallback {
     String custid="", orderId="", mid=""/*,amt=""*/;
+    String doa,timeSlot;
     int amtInt=500;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_turf_details);
+
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                doa= null;
+                timeSlot= null;
+            } else {
+                doa= extras.getString("doa");
+                timeSlot = extras.getString("timeSlot");
+            }
+        } else {
+            doa= (String) savedInstanceState.getSerializable("doa");
+            timeSlot= (String) savedInstanceState.getSerializable("timeSlot");
+        }
+
+
+
 
         InitPaytm();
     }

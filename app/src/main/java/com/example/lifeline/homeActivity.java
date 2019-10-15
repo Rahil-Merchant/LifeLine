@@ -21,6 +21,12 @@ public class homeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         setTitle("Home");
 
+        BottomNavigationView bottomNav=findViewById(R.id.bottom_nav);
+        bottomNav.setOnNavigationItemSelectedListener(navListner);
+        Menu menu =bottomNav.getMenu();
+        MenuItem menuItem=menu.getItem(0);
+        menuItem.setChecked(true);
+
         findViewById(R.id.homeLogout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,13 +71,12 @@ public class homeActivity extends AppCompatActivity {
             }
         });
 
-        BottomNavigationView bottomNav=findViewById(R.id.bottom_nav);
-        bottomNav.setOnNavigationItemSelectedListener(navListner);
-        Menu menu =bottomNav.getMenu();
-        MenuItem menuItem=menu.getItem(0);
-        menuItem.setChecked(true);
-
-
+        findViewById(R.id.homeBook).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(homeActivity.this, BookingActivity.class));
+            }
+        });
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListner=new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -90,7 +95,7 @@ public class homeActivity extends AppCompatActivity {
                     break;
 
             }
-           return true;
+            return true;
         }
     };
 }

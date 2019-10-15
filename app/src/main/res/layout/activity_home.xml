@@ -64,14 +64,24 @@
         style="@style/Button"/>
 
     <Button
-        android:id="@+id/homePayTM"
+    android:id="@+id/homePayTM"
+    style="@style/Button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="20pt"
+    android:drawablePadding="5pt"
+    android:text="PayTM" />
+
+    <Button
+        android:id="@+id/homeBook"
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20pt"
         android:drawablePadding="5pt"
-        android:text="PayTM" />
+        android:text="Book Appointment" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
