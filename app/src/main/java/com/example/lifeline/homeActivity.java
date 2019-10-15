@@ -53,5 +53,12 @@ public class homeActivity extends AppCompatActivity {
                 startActivity(new Intent(homeActivity.this, EditInfoActivity.class));
             }
         });
+
+        findViewById(R.id.homePayTM).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(homeActivity.this, PaytmActivity.class));
+            }
+        });
     }
 }

@@ -40,6 +40,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:17.2.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.material:material:1.1.0-beta01'
+    implementation('com.paytm:pgplussdk:1.2.3') {
+        transitive = true
+    }
 }
 
 apply plugin: 'com.google.gms.google-services'
