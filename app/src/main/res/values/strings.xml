@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">LifeLine</string>
     <string name="app_name_underlined">Life<u>Line</u></string>
+    <string name="map_key" translatable="false">AIzaSyCMzOesb-YcWdbToqNhSln6G49Pfo7EGHA</string>
 
     <string name="title_logout">Logout</string>
 

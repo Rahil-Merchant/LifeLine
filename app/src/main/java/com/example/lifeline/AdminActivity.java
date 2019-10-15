@@ -45,5 +45,14 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(new Intent(AdminActivity.this, PendingApplicationsActivity.class));
             }
         });
+
+        findViewById(R.id.CreateEvent).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminActivity.this, HospitalEventMain.class));
+            }
+        });
+
+
     }
 }
