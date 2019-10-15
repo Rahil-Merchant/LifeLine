@@ -27,7 +27,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20pt"
         android:id="@+id/homeLeader"
-        style="@style/Button"/>
+        style="@style/Button"
+        android:visibility="gone"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -71,6 +72,24 @@
         android:layout_marginTop="20pt"
         android:drawablePadding="5pt"
         android:text="PayTM" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/bottom_nav_menu"
+            android:background="@android:color/background_light"
+            />
+
+    </RelativeLayout>
+
+
 
 
 </LinearLayout>

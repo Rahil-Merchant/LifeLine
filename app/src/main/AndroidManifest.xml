@@ -19,6 +19,8 @@
         android:roundIcon="@drawable/lifeline_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PaytmActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".PendingApplicationsActivity"
             android:screenOrientation="portrait"/>
         <activity

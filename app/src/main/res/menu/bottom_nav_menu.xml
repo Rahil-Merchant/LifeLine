@@ -2,24 +2,29 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_donate"
-        android:icon="@drawable/donate_icon"
-        android:title="@string/title_donate" />
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_profile_black_24dp"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/navigation_appointment"
+        android:icon="@drawable/ic_access_appointments_black_24dp"
+        android:title="Donate" />
 
     <item
         android:id="@+id/navigation_events"
         android:icon="@drawable/ic_event_black_24dp"
         android:title="@string/title_events" />
 
-    <item
-        android:id="@+id/navigation_history"
-        android:icon="@drawable/ic_history_black_24dp"
-        android:title="@string/title_history" />
+<!--    <item-->
+<!--        android:id="@+id/navigation_history"-->
+<!--        android:icon="@drawable/ic_history_black_24dp"-->
+<!--        android:title="@string/title_history" />-->
 
-    <item
-        android:id="@+id/navigation_rewards"
-        android:icon="@drawable/ic_card_giftcard_red_24dp"
-        android:title="@string/title_rewards" />
+<!--    <item-->
+<!--        android:id="@+id/navigation_rewards"-->
+<!--        android:icon="@drawable/ic_card_giftcard_red_24dp"-->
+<!--        android:title="@string/title_rewards" />-->
 
     <item
         android:id="@+id/navigation_leaderboard"
@@ -27,10 +32,14 @@
         android:title="@string/title_leaderboard" />
 
 
-    <item
-        android:id="@+id/navigation_logout"
-        android:icon="@drawable/ic_power_settings_new_red_24dp"
-        android:title="@string/title_logout" />
+<!--    <item-->
+<!--        android:id="@+id/navigation_logout"-->
+<!--        android:icon="@drawable/ic_power_settings_new_red_24dp"-->
+<!--        android:title="@string/title_logout" />-->
+
+
+
+
 
 
 </menu>

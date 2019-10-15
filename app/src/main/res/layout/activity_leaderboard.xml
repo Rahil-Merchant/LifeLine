@@ -1,48 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LeaderboardActivity">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_nav"
+        android:fitsSystemWindows="true">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/leaderboard_header">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <TextView
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
-                android:layout_alignParentStart="true"
-                style="@style/TextView"
-                android:layout_marginTop="4pt"
-                android:layout_marginBottom="4pt"
-                android:layout_marginLeft="20dp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Times Donated"
-                android:layout_alignParentEnd="true"
-                style="@style/TextView"
-                android:layout_margin="4pt"
-                />
+                android:orientation="vertical"
+                android:id="@+id/leaderboard_header">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:layout_alignParentStart="true"
+                    style="@style/TextView"
+                    android:layout_marginTop="4pt"
+                    android:layout_marginBottom="4pt"
+                    android:layout_marginLeft="20dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Times Donated"
+                    android:layout_alignParentEnd="true"
+                    style="@style/TextView"
+                    android:layout_margin="4pt"
+                    />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/leaderboard_header"
+                android:id="@+id/Leaderboard_recycler_view"/>
+
         </RelativeLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/Leaderboard_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/leaderboard_header"/>
 
-    </RelativeLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu"
+        android:background="@android:color/background_light"
+        />
+
+</RelativeLayout>
 
