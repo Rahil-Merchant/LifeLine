@@ -2,31 +2,20 @@ package com.example.lifeline;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.Manifest;
-import android.app.ProgressDialog;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toast;
-
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
-import com.google.firebase.storage.FirebaseStorage;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -38,30 +27,26 @@ public class PendingApplicationsActivity extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference userRef,applRef;
     private PendingApplicationsAdapter adapter;
-    String uid,date_today,last_donated;
+    String uid,date_today;
     int times_donated,rewards_countInc=0;
-    Boolean isAccepted,reqReport;
-    DocumentSnapshot applSnapshot;
-    FirebaseDatabase database;
+    private DocumentSnapshot applSnapshot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pending_applications);
         setTitle("Today's Appointments");
-
         userRef=db.collection("users");
         applRef=db.collection("applwait");
-        date_today = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         setUpRecyclerView();
-        database=FirebaseDatabase.getInstance();
     }
 
     private void setUpRecyclerView() {
-        Query query = userRef.whereEqualTo("isAccepted", false).whereEqualTo("doa", date_today);
+        date_today = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
+        Query query = applRef.whereEqualTo("isAccepted", false).whereEqualTo("doa", date_today);
 
-        FirestoreRecyclerOptions<adminReport> options = new FirestoreRecyclerOptions.Builder<adminReport>()
-                .setQuery(query, adminReport.class)
+        FirestoreRecyclerOptions<PendingApplications> options = new FirestoreRecyclerOptions.Builder<PendingApplications>()
+                .setQuery(query, PendingApplications.class)
                 .build();
 
         adapter = new PendingApplicationsAdapter(options);
@@ -79,8 +64,8 @@ public class PendingApplicationsActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         if(task.isSuccessful()){
                             DocumentSnapshot userDoc = task.getResult();
-                            times_donated = (Integer) userDoc.get("times_donated");
-                            if (times_donated !=0 && times_donated%5 == 0)
+                            times_donated = userDoc.getLong("timesDonated").intValue();
+                            if (times_donated%5 == 4)
                                 rewards_countInc = 1;
                             else
                                 rewards_countInc=0;
@@ -89,7 +74,7 @@ public class PendingApplicationsActivity extends AppCompatActivity {
                             userUpdate.put("last_donated", date_today);
                             userUpdate.put("timesDonated", FieldValue.increment(1));
                             userUpdate.put("rewards_count", FieldValue.increment(rewards_countInc));
-                            userRef.document("uid").update(userUpdate).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            userRef.document(uid).update(userUpdate).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     applUpdate();
@@ -101,7 +86,7 @@ public class PendingApplicationsActivity extends AppCompatActivity {
                                 }
                             });
                         }else{
-                            Toast.makeText(PendingApplicationsActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PendingApplicationsActivity.this,"Unexpected Error, Please Check Your Internet Connection", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -116,5 +101,17 @@ public class PendingApplicationsActivity extends AppCompatActivity {
                 Toast.makeText(PendingApplicationsActivity.this, "Information Updated", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 }

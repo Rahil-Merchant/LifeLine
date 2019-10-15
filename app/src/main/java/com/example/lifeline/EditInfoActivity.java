@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 
@@ -60,6 +61,7 @@ public class EditInfoActivity extends AppCompatActivity {
         genderSp=findViewById(R.id.InfoGender);
         bloodGrpSp1=findViewById(R.id.InfoBloodGrp1);
         bloodGrpSp2=findViewById(R.id.InfoBloodGrp2);
+        setValues();
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.genders,android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,R.array.bloodGrp1string,android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,R.array.bloodGrp2string,android.R.layout.simple_spinner_item);
@@ -245,5 +247,28 @@ public class EditInfoActivity extends AppCompatActivity {
             Toast.makeText(this, "Unexpected Error", Toast.LENGTH_SHORT).show();
             finish();
         }
+    }
+
+    void setValues(){
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String uid = FirebaseAuth.getInstance().getUid();
+        DocumentReference userRef = db.collection("users").document(uid);
+        userRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                fnameEt.setText(documentSnapshot.getString("fname"));
+                mnameEt.setText(documentSnapshot.getString("mname"));
+                lnameEt.setText(documentSnapshot.getString("lname"));
+                occupationEt.setText(documentSnapshot.getString("occupation"));
+                organizationEt.setText(documentSnapshot.getString("organization"));
+                mobNoEt.setText(documentSnapshot.getString("mobNo"));
+                dobBtn.setText(documentSnapshot.getString("dob"));
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(EditInfoActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

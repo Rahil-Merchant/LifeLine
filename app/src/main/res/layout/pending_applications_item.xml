@@ -27,6 +27,13 @@
             android:text="Rahil Merchant" />
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/pending_gender"
+            android:text="M"/>
+
+        <TextView
             android:id="@+id/pending_emailTv"
             style="@style/TextView"
             android:layout_width="wrap_content"
@@ -48,12 +55,50 @@
             android:text="rahilmerchant99@gmail.com" />
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pending_dobTv"
+            android:layout_below="@+id/pending_emailTv"
+            android:text="Date of Birth : "
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pending_dob"
+            android:layout_toEndOf="@id/pending_dobTv"
+            android:layout_below="@+id/pending_emailTv"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="10/10/1999"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blood Group : "
+            android:layout_toEndOf="@id/pending_dob"
+            android:layout_below="@id/pending_email"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10pt"
+            android:id="@+id/pending_bloodGrpTv"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="B +"
+            android:layout_toEndOf="@id/pending_bloodGrpTv"
+            android:layout_below="@id/pending_email"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:id="@+id/pending_bloodGrp"/>
+
+        <TextView
             android:id="@+id/pending_mobile"
             android:layout_width="wrap_content"
             style="@style/TextView"
             android:layout_marginTop="5dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/pending_emailTv"
+            android:layout_below="@id/pending_dobTv"
             android:fontFamily="sans-serif-condensed-light"
             android:drawableStart="@drawable/ic_call_black_24dp"
             android:gravity="center_vertical"
@@ -84,9 +129,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/TextView"
-            android:layout_below="@+id/pending_occupationTv"
+            android:layout_below="@+id/pending_mobile"
             android:text="Organization : "
+            android:layout_toEndOf="@id/pending_occupation"
             android:id="@+id/pending_organizationTv"
+            android:layout_marginLeft="5pt"
             android:layout_marginTop="5dp"/>
 
         <TextView
@@ -94,10 +141,10 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-light"
             style="@style/TextView"
-            android:layout_below="@+id/pending_occupationTv"
+            android:layout_below="@+id/pending_mobile"
+            android:layout_toEndOf="@id/pending_organizationTv"
             android:text="NMIMS"
             android:id="@+id/pending_organization"
-            android:layout_toEndOf="@id/pending_organizationTv"
             android:layout_marginTop="5dp"/>
 
         <TextView
@@ -105,7 +152,7 @@
             android:layout_height="wrap_content"
             style="@style/TextView"
             android:layout_below="@id/pending_organizationTv"
-            android:text="7-9 AM"
+            android:text="14/10/1999 at 7-9 AM"
             android:gravity="center_vertical"
             android:layout_marginTop="5dp"
             android:drawableLeft="@drawable/ic_access_time_black_24dp"
@@ -121,7 +168,8 @@
             android:layout_below="@id/pending_timeSlot"
             android:layout_marginTop="5dp"
             android:drawablePadding="3pt"
-            android:text="Donated"
+            android:text="Verify"
+            android:textSize="6pt"
             style="@style/Button"
             android:id="@+id/pending_donated"/>
 
