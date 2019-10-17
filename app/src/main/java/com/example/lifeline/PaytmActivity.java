@@ -5,12 +5,15 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 //import android.support.v4.app.ActivityCompat;
 //import android.support.v4.content.ContextCompat;
 //import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
 //import android.widget.EditText;
 import android.widget.Toast;
@@ -18,6 +21,12 @@ import androidx.core.content.ContextCompat;
 import androidx.core.app.ActivityCompat;
 //PAYTM
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.paytm.pgsdk.PaytmPaymentTransactionCallback;
 import com.paytm.pgsdk.PaytmOrder;
 import com.paytm.pgsdk.PaytmPGService;
@@ -33,15 +42,24 @@ import java.util.Random;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import static com.paytm.pgsdk.easypay.manager.PaytmAssist.getContext;
+
 
 public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTransactionCallback {
     String custid="", orderId="", mid=""/*,amt=""*/;
     String doa,timeSlot;
-    int amtInt=500;
+    int amtInt=0;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    String fname,mname,lname,gender,occupation,organization,mobNo,bloodGrp,dob,uid,email,last_donated;
+    int rewards_count,timesDonated;
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_turf_details);
+        mAuth = FirebaseAuth.getInstance();
+        uid = mAuth.getUid();
+        email = mAuth.getCurrentUser().getEmail();
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
@@ -223,8 +241,75 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
         super.onActivityResult(requestCode, resultCode, data);
+        saveInfo();
+        Toast.makeText(this, "Appointment Fixed", Toast.LENGTH_LONG).show();
         finish();
         startActivity(new Intent(this,homeActivity.class));
+    }
+
+
+    void createAppl(){
+        Map<String, Object> newAppl = new HashMap<>();
+        newAppl.put("fname", fname);
+        newAppl.put("mname", mname);
+        newAppl.put("lname", lname);
+        newAppl.put("gender", gender);
+        newAppl.put("occupation", occupation);
+        newAppl.put("last_donated", last_donated);
+        newAppl.put("organization", organization);
+        newAppl.put("mobNo", mobNo);
+        newAppl.put("bloodGrp", bloodGrp);
+        newAppl.put("dob", dob);
+        newAppl.put("rewards_count", rewards_count);
+        newAppl.put("isAccepted", false);
+        newAppl.put("reqReport", false);
+        newAppl.put("repdoc", "no");
+        newAppl.put("uid", uid);
+        newAppl.put("email", email);
+        newAppl.put("doa",doa);
+        newAppl.put("timeSlot",timeSlot);
+
+        DocumentReference applRef = db.collection("applwait").document();
+        applRef.set(newAppl).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                finish();
+                startActivity(new Intent(getContext(),homeActivity.class));
+                Toast.makeText(getApplicationContext(), "Appointment Scheduled", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(), "Unexpected Error, Please Check Your Internet Connection", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    void saveInfo(){
+        DocumentReference userRef = db.collection("users").document(uid);
+        userRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                fname = documentSnapshot.getString("fname");
+                mname = documentSnapshot.getString("mname");
+                lname = documentSnapshot.getString("lname");
+                gender = documentSnapshot.getString("gender");
+                mobNo = documentSnapshot.getString("mobNo");
+                last_donated = documentSnapshot.getString("last_donated");
+                dob = documentSnapshot.getString("dob");
+                occupation = documentSnapshot.getString("occupation");
+                organization = documentSnapshot.getString("organization");
+                rewards_count = documentSnapshot.getLong("rewards_count").intValue();
+                timesDonated = documentSnapshot.getLong("timesDonated").intValue();
+                bloodGrp = documentSnapshot.getString("bloodGrp");
+                createAppl();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
 

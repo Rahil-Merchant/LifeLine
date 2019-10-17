@@ -90,7 +90,7 @@ public class AppointmentStepOne extends Fragment {
 
     @Override
     public void onDestroy() {
-        localBroadcastManager.unregisterReceiver(displayTimeSlot);
+        //localBroadcastManager.unregisterReceiver(displayTimeSlot);
         super.onDestroy();
     }
 
@@ -99,7 +99,7 @@ public class AppointmentStepOne extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View itemView =  inflater.inflate(R.layout.appointment_step_one   ,container,false);
-        calendarView = (HorizontalCalendarView) itemView.findViewById(R.id.calendarView);
+        calendarView = itemView.findViewById(R.id.calendarView);
         spinner = itemView.findViewById(R.id.spinner);
         spinner.setItems(timing_list);
         unbinder = ButterKnife.bind(this,itemView);
