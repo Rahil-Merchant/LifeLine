@@ -52,7 +52,7 @@ public class BookingActivity extends AppCompatActivity {
         btn_prev_step.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(step == 3 || step>0)
+                if(step == 2 || step>0)
                 {
                     step--;
                     viewPager.setCurrentItem(step);
@@ -65,7 +65,7 @@ public class BookingActivity extends AppCompatActivity {
         btn_next_step.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(step < 3 || step == 0)
+                if(step < 2 || step == 0)
                 {
                     step++;
                     viewPager.setCurrentItem(step);
@@ -89,6 +89,8 @@ public class BookingActivity extends AppCompatActivity {
                 stepView.go(i,true);
                 if(i==0)
                     btn_prev_step.setEnabled(false);
+                else if(i==2)
+                    btn_next_step.setEnabled(false);
                 else
                     btn_prev_step.setEnabled(true);
 
