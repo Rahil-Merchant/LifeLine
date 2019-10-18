@@ -85,11 +85,11 @@ public class BookingActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onPageSelected(int i) {
-                stepView.go(i,true);
-                if(i==0)
+            public void onPageSelected(int step) {
+                stepView.go(step,true);
+                if(step==0)
                     btn_prev_step.setEnabled(false);
-                else if(i==2)
+                else if(step==2)
                     btn_next_step.setEnabled(false);
                 else
                     btn_prev_step.setEnabled(true);

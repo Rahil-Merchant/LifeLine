@@ -227,7 +227,8 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
         Log.e("checksum ", " cancel call back respon  " );
         Toast.makeText(getApplicationContext(), "Transaction cancelled" , Toast.LENGTH_LONG).show();
         finish();
-        startActivity(new Intent(this,homeActivity.class));
+        BookingActivity.step = 0;
+        startActivity(new Intent(this,BookingActivity.class));
     }
 
     @Override
