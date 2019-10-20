@@ -48,7 +48,7 @@ import static com.paytm.pgsdk.easypay.manager.PaytmAssist.getContext;
 public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTransactionCallback {
     String custid="", orderId="", mid=""/*,amt=""*/;
     String doa,timeSlot;
-    int amtInt=0;
+    int amtInt=50;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String fname,mname,lname,gender,occupation,organization,mobNo,bloodGrp,dob,uid,email,last_donated;
     int rewards_count,timesDonated;
@@ -185,7 +185,7 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
         if (ContextCompat.checkSelfPermission(PaytmActivity.this, Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED)
             ActivityCompat.requestPermissions(PaytmActivity.this, new String[]{Manifest.permission.READ_SMS, Manifest.permission.RECEIVE_SMS}, 101);
         finish();
-        startActivity(new Intent(this,PaytmActivity.class));
+        startActivity(new Intent(this,homeActivity.class));
 
     }
 
@@ -263,7 +263,7 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
         newAppl.put("dob", dob);
         newAppl.put("rewards_count", rewards_count);
         newAppl.put("isAccepted", false);
-        newAppl.put("reqReport", false);
+        newAppl.put("reqReport", true);
         newAppl.put("repdoc", "no");
         newAppl.put("uid", uid);
         newAppl.put("email", email);
