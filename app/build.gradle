@@ -69,6 +69,12 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:17.0.0'
     implementation 'com.google.android.gms:play-services-places:17.0.0'
     implementation 'com.google.android.libraries.places:places:2.0.0'
+
+    //Enabled for amazon pay
+//    implementation 'com.android.support:customtabs:28.0.0'
+//    implementation(name: 'razorpay-amazonpay-debug', ext: 'aar')
+//    implementation(name: 'PayWithAmazon', ext: 'aar')
+    implementation 'com.razorpay:checkout:1.5.8'
 }
 
 apply plugin: 'com.google.gms.google-services'
