@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckDonor3">
+
+    <TextView
+        android:id="@+id/text11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3. Do you suffer from or have suffered from any of the following diseases?"/>
+
+    <CheckBox
+        android:id="@+id/checkbox11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text11"
+        android:text="Heart Disease"
+        android:textColor="@color/colorAccent"
+        />
+    <CheckBox
+        android:id="@+id/checkbox12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text11"
+        android:text="Lung disease"
+        android:layout_toRightOf="@+id/checkbox11"
+        android:textColor="@color/colorAccent"
+       />
+    <CheckBox
+        android:id="@+id/checkbox13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text11"
+        android:layout_toRightOf="@+id/checkbox12"
+        android:text="Kidney Disease"
+        android:textColor="@color/colorAccent"
+/>
+    <CheckBox
+        android:id="@+id/checkbox14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkbox13"
+        android:text="Cancer/Malignant Disease"
+        android:textColor="@color/colorAccent"
+        />
+    <CheckBox
+        android:id="@+id/checkbox15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkbox11"
+        android:layout_toRightOf="@+id/checkbox14"
+        android:text="HIV infection, AIDS or Sexually Transmitted Diseases (STD)"
+        android:textColor="@color/colorAccent"
+  />
+    <CheckBox
+        android:id="@+id/checkbox16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkbox15"
+        android:text="Hepatitis B and C"
+        android:textColor="@color/colorAccent"
+        />
+    <CheckBox
+        android:id="@+id/checkbox17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkbox15"
+        android:text="Abnormal bleeding tendency"
+        android:layout_toRightOf="@+id/checkbox16"
+        android:textColor="@color/colorAccent"
+ />
+    <CheckBox
+        android:id="@+id/checkbox18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkbox17"
+        android:text="Diabetes"
+        android:textColor="@color/colorAccent"
+/>
+
+    <TextView
+        android:id="@+id/blank2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@+id/checkbox18"/>
+
+
+    <TextView
+        android:id="@+id/blank3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@+id/blank2"/>
+
+    <TextView
+        android:id="@+id/text13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4. For women donors"
+        android:layout_below="@+id/blank3"
+        />
+
+    <CheckBox
+        android:id="@+id/checkbox20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text13"
+        android:text="Are you pregnant"
+        android:textColor="@color/colorAccent"
+        />
+    <CheckBox
+        android:id="@+id/checkbox21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkbox20"
+        android:text="Have you had an abortion in the last 3 months"
+        android:textColor="@color/colorAccent"
+        />
+    <CheckBox
+        android:id="@+id/checkbox22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkbox21"
+        android:text="Do you have a child less than one year old?"
+        android:textColor="@color/colorAccent"
+       />
+    <CheckBox
+        android:id="@+id/checkbox23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkbox22"
+        android:text="Is the child still breast-feeding?"
+        android:textColor="@color/colorAccent"
+/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Finish Survey"
+        android:layout_marginTop="500dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/finish"/>
+
+
+
+
+</RelativeLayout>
