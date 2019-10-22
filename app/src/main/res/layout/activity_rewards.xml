@@ -44,7 +44,7 @@
             android:max="5"
             android:progress="2"
             android:progressBackgroundTintMode="add"
-            android:progressTint="#B50000" />
+            android:progressTint="@color/red" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -109,6 +109,7 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
         android:layout_marginTop="25pt"
+        style="@style/TextView"
         android:text="Number of free health checkups yet to be redeemed :" />
 
     <TextView
@@ -118,6 +119,7 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
         android:textSize="12pt"
+        style="@style/TextView"
         android:layout_marginTop="10pt"
         android:text="2" />
 
@@ -126,6 +128,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
+        style="@style/TextView"
         android:layout_marginTop="20pt"
         android:text="Please show this screen to hospital authorities to redeem your reward." />
 </LinearLayout>

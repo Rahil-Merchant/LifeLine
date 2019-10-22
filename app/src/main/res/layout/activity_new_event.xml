@@ -23,6 +23,7 @@
         <EditText
             android:id="@+id/edit_text_title"
             android:layout_width="match_parent"
+            android:fontFamily="@font/montserrat"
             android:layout_height="wrap_content"
             android:hint="Title"
             android:inputType="text"/>
@@ -31,6 +32,7 @@
             android:id="@+id/edit_text_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
             android:hint="Description"
             android:inputType="textMultiLine"/>
 
@@ -39,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Event Date:"
+            android:fontFamily="@font/montserrat"
             android:textColor="@android:color/black"
             android:textSize="15sp"
             android:textStyle="bold"/>
@@ -57,8 +60,10 @@
             <TextView
                 android:id="@+id/country_code"
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/montserrat"
                 android:layout_height="wrap_content"
                 android:text="+91"
+                android:textColor="@color/red"
                 android:layout_marginTop="15dp"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
@@ -67,6 +72,7 @@
                 android:layout_width="360dp"
                 android:layout_height="match_parent"
                 android:id="@+id/text_view_number"
+                android:fontFamily="@font/montserrat"
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="32dp"
                 android:hint="Enter Phone Number (Please Enter 10 digits)"
@@ -82,6 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Event Location:"
+            android:fontFamily="@font/montserrat"
             android:textColor="@android:color/black"
             android:textSize="15sp"
             android:textStyle="bold"/>
@@ -92,6 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter location"
+            android:fontFamily="@font/montserrat"
             android:name="com.google.android.libraries.places.compat.ui.PlaceAutocompleteFragment"
             android:id="@+id/location"/>
 
@@ -123,6 +131,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/Location_Button"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/red"
             android:text="Select Location" />
 
 

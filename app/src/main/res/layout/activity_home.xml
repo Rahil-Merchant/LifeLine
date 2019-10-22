@@ -15,6 +15,8 @@
         android:drawablePadding="5pt"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20pt"
+        android:fontFamily="@font/montserrat"
+        android:backgroundTint="@color/red"
         android:id="@+id/homeLogout"
         style="@style/Button"/>
 
@@ -26,6 +28,8 @@
         android:drawablePadding="5pt"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20pt"
+        android:fontFamily="@font/montserrat"
+        android:backgroundTint="@color/red"
         android:id="@+id/homeRewards"
         style="@style/Button"/>
 
@@ -36,6 +40,8 @@
         android:drawableEnd="@drawable/ic_history_white_24dp"
         android:drawablePadding="5pt"
         android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/montserrat"
+        android:backgroundTint="@color/red"
         android:layout_marginTop="20pt"
         android:id="@+id/homeHistory"
         style="@style/Button"/>
@@ -46,6 +52,8 @@
         android:text="Edit Information"
         android:drawableEnd="@drawable/ic_mode_edit_black_24dp"
         android:drawablePadding="5pt"
+        android:fontFamily="@font/montserrat"
+        android:backgroundTint="@color/red"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20pt"
         android:id="@+id/homeEdit"

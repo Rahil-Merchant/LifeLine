@@ -40,14 +40,19 @@ public class AppointmentStepThree extends Fragment implements View.OnClickListen
 
     static AppointmentStepThree instance;
 
-    public static AppointmentStepThree getInstance()
+   /* public static AppointmentStepThree getInstance()
     {
         if(instance == null)
         {
             instance = new AppointmentStepThree();
         }
         return instance;
-    }
+    }*/
+   public static AppointmentStepThree newInstance() {
+       AppointmentStepThree fragment = new AppointmentStepThree();
+       return fragment;
+   }
+
 
 
     @Nullable
@@ -56,8 +61,8 @@ public class AppointmentStepThree extends Fragment implements View.OnClickListen
         super.onCreateView(inflater, container, savedInstanceState);
         View itemView =  inflater.inflate(R.layout.appointment_step_three  ,container,false);
         mAuth = FirebaseAuth.getInstance();
-        timeSlot = "2-3 PM";
-        doa = "15/10/2019";
+        timeSlot = "8 to 11 AM";
+        doa = "23/10/2019";
         option1 = itemView.findViewById(R.id.option_one);
         option2 = itemView.findViewById(R.id.option_two);
         pBar = itemView.findViewById(R.id.appointment_pBar);

@@ -19,6 +19,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Full Name:"
+            android:textColor="@color/red"
+            android:fontFamily="@font/montserrat"
             android:id="@+id/InfoFullnameTv"
             style="@style/TextView"/>
 
@@ -57,6 +59,8 @@
             android:layout_height="15pt"
             android:gravity="center_vertical"
             android:text="Gender : "
+            android:textColor="@color/red"
+            android:fontFamily="@font/montserrat"
             android:layout_below="@id/infoFname"
             android:id="@+id/InfoGenderTv"
             android:layout_alignParentStart="true"
@@ -87,6 +91,8 @@
             android:layout_height="17pt"
             style="@style/Button"
             android:text="Select Date"
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/montserrat"
             android:drawablePadding="5pt"
             android:drawableRight="@drawable/ic_date_range_black_24dp"
             android:layout_below="@id/InfoGenderTv"
@@ -99,6 +105,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:fontFamily="@font/montserrat"
             android:text="Contact Details : "
             android:layout_below="@id/InfoDobTv"
             android:id="@+id/ContactDetailsTv"
@@ -148,6 +156,8 @@
             android:layout_height="15pt"
             android:gravity="center_vertical"
             android:text="Blood Group : "
+            android:textColor="@color/red"
+            android:fontFamily="@font/montserrat"
             android:layout_below="@id/infoOccupation"
             android:id="@+id/InfoBloodGrpTv"
             android:layout_alignParentStart="true"
@@ -182,6 +192,8 @@
             android:layout_marginTop="20pt"
             android:layout_centerHorizontal="true"
             android:text="Proceed"
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/montserrat"
             android:drawablePadding="4pt"
             android:drawableRight="@drawable/ic_arrow_forward_black_24dp"/>
 
