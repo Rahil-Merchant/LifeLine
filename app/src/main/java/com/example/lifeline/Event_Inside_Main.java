@@ -5,12 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.location.Address;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -34,11 +38,19 @@ public class Event_Inside_Main extends AppCompatActivity implements OnMapReadyCa
     private MapView mMapView;
     Double lat;
     Double lon;
+    Button checkbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event__inside__main);
+        checkbutton=findViewById(R.id.check_Button);
+        checkbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Event_Inside_Main.this,CheckDonor.class));
+            }
+        });
         TextView Title=findViewById(R.id.text);
         TextView description = findViewById(R.id.text_view_description);
         TextView address=findViewById(R.id.text_view_Address);
@@ -134,6 +146,10 @@ public class Event_Inside_Main extends AppCompatActivity implements OnMapReadyCa
         //map.addMarker(new MarkerOptions().position())
         map.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(Title_pass));
         map.setMyLocationEnabled(true);
+        CameraUpdate point = CameraUpdateFactory.newLatLng(new LatLng(lat, lon));
+        map.moveCamera(point);
+        map.animateCamera(point);
+
 
         //Projection projection = map.getProjection();
         //LatLng markerLocation = marker.getPosition();

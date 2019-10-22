@@ -512,7 +512,7 @@ public class NewEventActivity extends AppCompatActivity implements OnMapReadyCal
         //int month = datePickerDate.getMonth()+1;
         //int year = datePickerDate.getYear();
 
-        if(!TextUtils.isEmpty(title)&&!TextUtils.isEmpty(descrption)&&imageUri!=null&&!TextUtils.isEmpty(phone)&&!TextUtils.isEmpty(addressfinal)){
+        if(!TextUtils.isEmpty(title)&&!TextUtils.isEmpty(descrption)&&imageUri!=null&&!TextUtils.isEmpty(phone)&&!TextUtils.isEmpty(addressfinal)&&addresslat!=null){
             File newFile = new File(imageUri.getPath());
             try {
                 compressed = new Compressor(NewEventActivity.this)
@@ -527,6 +527,8 @@ public class NewEventActivity extends AppCompatActivity implements OnMapReadyCal
 
 
             }
+
+
 
 
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -629,6 +631,12 @@ public class NewEventActivity extends AppCompatActivity implements OnMapReadyCal
 
         if(title.trim().isEmpty() || descrption.trim().isEmpty() || phone.trim().isEmpty()||addressfinal.trim().isEmpty()){
             Toast.makeText(this,"Please insert Title,Description,Phone Number,Image and Address",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if(addresslat==null)
+        {
+            Toast.makeText(this,"Please check Address Before Submitting",Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -772,8 +780,10 @@ public class NewEventActivity extends AppCompatActivity implements OnMapReadyCal
                     //addresslong=bundlelat.getString("addresslong");
                     //addresslat=bundlelong.getString("addresslat");
                     address = bundle.getString("address");
-                    addresslat = address.substring(0, 9);
-                    addresslong = address.substring(10, 19);
+                    addresslat = address.substring(0,8);
+                    addresslong = address.substring(9,18);
+                    //addresslat = address.substring(0, 9);
+                    //addresslong = address.substring(10, 19);
                     break;
                 default:
                     address = null;

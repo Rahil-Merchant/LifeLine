@@ -27,16 +27,25 @@ class GeoLocation {
                 String result = null;
                 String resultLat=null;
                 String resultLong=null;
+                String resultLat1=null;
+                String resultLong1=null;
+                Double checkLat=7.000000;
+                Double checkLong=100.00000;
                 try {
-                    List addressList = geocoder.getFromLocationName(locationAddress,5);
+                    List addressList = geocoder.getFromLocationName(locationAddress,1);
                     if(addressList!=null&& addressList.size()>0){
                         Address address =(Address)addressList.get(0);
                         StringBuilder stringBuilder=new StringBuilder();
-                        stringBuilder.append(address.getLatitude()).substring(0,9);
+                        stringBuilder.append(address.getLatitude());
                         stringBuilder.append(address.getLongitude());
-                        result=stringBuilder.toString();
+                        //result=stringBuilder.toString();
                         resultLat=String.valueOf(address.getLatitude());
                         resultLong=String.valueOf(address.getLongitude());
+                        resultLat1=resultLat.substring(0,9);
+                        resultLong1=resultLong.substring(0,9);
+                        result=resultLat1+resultLong1;
+                        checkLat=Double.parseDouble(resultLat);
+                        checkLong=Double.parseDouble(resultLong);
 
                     }
                 } catch (IOException e) {
@@ -49,7 +58,7 @@ class GeoLocation {
                     Message messagelong=Message.obtain();
                     messagelong.setTarget(handler);
 
-                    if(result!=null&&resultLat.length()==10&&resultLong.length()==10){
+                    if(result!=null&&checkLat>=8&&checkLat<=37&&checkLong>=68&&checkLong<=98){
                         message.what = 1;
                         Bundle bundle=new Bundle();
                         Bundle bundlelat=new Bundle();

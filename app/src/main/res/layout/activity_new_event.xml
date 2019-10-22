@@ -98,7 +98,7 @@
         <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter location"
+            android:hint="Enter location (Type Pincode,before Checking The Location)"
             android:fontFamily="@font/montserrat"
             android:name="com.google.android.libraries.places.compat.ui.PlaceAutocompleteFragment"
             android:id="@+id/location"/>
@@ -133,7 +133,7 @@
             android:id="@+id/Location_Button"
             android:fontFamily="@font/montserrat"
             android:textColor="@color/red"
-            android:text="Select Location" />
+            android:text="Check Location" />
 
 
     </LinearLayout>
