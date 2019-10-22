@@ -60,16 +60,17 @@
         style="@style/Button"/>
 
     <Button
+
+        style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CreateEvent"
-        android:drawableRight="@drawable/ic_today_black_24dp"
-        android:drawablePadding="5pt"
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/montserrat"
         android:backgroundTint="@color/red"
         android:layout_marginTop="20pt"
-        android:id="@+id/CreateEvent"
-        style="@style/Button"/>
+        android:drawableRight="@drawable/ic_today_black_24dp"
+        android:drawablePadding="5pt"
+        android:id="@+id/createEvent"
+        android:text="Create Event" />
 
 </LinearLayout>
