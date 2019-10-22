@@ -61,6 +61,7 @@
                 android:textColor="@color/red"
                 android:layout_marginLeft="27dp"
                 android:layout_below="@+id/Description"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/montserrat"
                 android:text="ABC"
                 android:textSize="15sp" />
@@ -73,6 +74,7 @@
                 android:textColor="@color/red"
                 android:fontFamily="@font/montserrat"
                 android:layout_below="@+id/text_view_description"
+                android:layout_marginTop="10dp"
                 android:text="C O N T A C T"
                 android:textSize="15sp"
                 android:textStyle="bold"
@@ -87,6 +89,7 @@
                 android:textColor="@color/red"
                 android:fontFamily="@font/montserrat"
                 android:text="9920016542"
+                android:layout_marginTop="5dp"
                 android:textSize="15sp"
                 android:autoLink="phone"/>
 
@@ -96,6 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="27dp"
                 android:layout_below="@+id/text_view_phone_number"
+                android:layout_marginTop="10dp"
                 android:text="A D D R E S S"
                 android:textSize="15sp"
                 android:textColor="@color/red"
@@ -110,6 +114,7 @@
                 android:layout_marginLeft="27dp"
                 android:layout_below="@+id/Address"
                 android:text="9920016542"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/red"
                 android:fontFamily="@font/montserrat"
                 android:textSize="15sp"
@@ -121,6 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="27dp"
                 android:layout_below="@+id/text_view_Address"
+                android:layout_marginTop="10dp"
                 android:text="M A P"
                 android:textSize="15sp"
                 />
