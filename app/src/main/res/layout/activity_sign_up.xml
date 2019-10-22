@@ -11,6 +11,7 @@
         android:id="@+id/upEmail"
         android:layout_width="120pt"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50pt"
         android:hint="Email"
@@ -21,6 +22,7 @@
         android:layout_width="120pt"
         android:layout_height="wrap_content"
         android:layout_marginTop="7pt"
+        android:fontFamily="@font/montserrat"
         android:hint="Password"
         android:layout_gravity="center_horizontal"
         android:inputType="textPassword" />
@@ -29,6 +31,7 @@
         android:id="@+id/upConfirmPassword"
         android:layout_width="120pt"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
         android:layout_marginTop="7pt"
         android:hint="Confirm Password"
         android:layout_gravity="center_horizontal"
@@ -46,6 +49,7 @@
     <TextView
         android:id="@+id/upSignin"
         android:layout_height="wrap_content"
+        style="@style/TextView"
         android:layout_width="wrap_content"
         android:layout_marginTop="20pt"
         android:text="Already Have An Account? SIGN IN"

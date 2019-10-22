@@ -43,7 +43,7 @@ public class PendingApplicationsActivity extends AppCompatActivity {
 
     private void setUpRecyclerView() {
         date_today = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
-        Query query = applRef.whereEqualTo("isAccepted", false).whereEqualTo("doa", date_today);
+        Query query = applRef.whereEqualTo("isAccepted", false);//.whereEqualTo("doa", date_today);
 
         FirestoreRecyclerOptions<PendingApplications> options = new FirestoreRecyclerOptions.Builder<PendingApplications>()
                 .setQuery(query, PendingApplications.class)

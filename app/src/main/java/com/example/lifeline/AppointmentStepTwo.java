@@ -18,14 +18,21 @@ public class AppointmentStepTwo extends Fragment {
 
     static AppointmentStepTwo instance;
 
-    public static AppointmentStepTwo getInstance()
+   /* public static AppointmentStepTwo getInstance()
     {
         if(instance == null)
         {
             instance = new AppointmentStepTwo();
         }
         return instance;
+    }*/
+
+    public static AppointmentStepTwo newInstance() {
+        AppointmentStepTwo fragment = new AppointmentStepTwo();
+        return fragment;
     }
+
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,6 +40,7 @@ public class AppointmentStepTwo extends Fragment {
 
 
     }
+
 
     @Nullable
     @Override

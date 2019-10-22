@@ -68,6 +68,7 @@ public class homeActivity extends AppCompatActivity {
                     // do nothing
                     break;
                 case R.id.navigation_appointment:
+                    BookingActivity.step = 0;
                     startActivity(new Intent(homeActivity.this, BookingActivity.class));
                     break;
                 case R.id.navigation_events:

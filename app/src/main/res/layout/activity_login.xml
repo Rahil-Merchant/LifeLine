@@ -11,6 +11,7 @@
         android:id="@+id/inEmail"
         android:layout_width="120pt"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
         android:layout_marginTop="50pt"
         android:layout_gravity="center_horizontal"
         android:ems="10"
@@ -20,6 +21,7 @@
     <EditText
         android:id="@+id/inPassword"
         android:layout_width="120pt"
+        android:fontFamily="@font/montserrat"
         android:layout_height="wrap_content"
         android:layout_marginTop="6pt"
         android:layout_gravity="center_horizontal"
@@ -34,6 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="12pt"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/montserrat"
         android:elevation="3pt"
         android:text="Sign In"/>
 
@@ -79,6 +83,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15pt"
         android:gravity="center_horizontal"
+        android:textColor="@color/red"
+        android:fontFamily="@font/montserrat"
         android:text="Forgot Password" />
 
     <TextView
@@ -87,6 +93,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5pt"
+        android:textColor="@color/red"
+        android:fontFamily="@font/montserrat"
         android:gravity="center_horizontal"
         android:text="Don't have an account? Sign Up" />
 

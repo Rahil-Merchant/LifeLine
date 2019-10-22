@@ -42,6 +42,10 @@ public class AppointmentStepOne extends Fragment {
     MaterialSpinner spinner;
     List<String> timing_list = new ArrayList<>();
 
+    @Override
+    public void setRetainInstance(boolean retain) {
+        super.setRetainInstance(retain);
+    }
 
     BroadcastReceiver displayTimeSlot = new BroadcastReceiver() {
         @Override
@@ -60,13 +64,17 @@ public class AppointmentStepOne extends Fragment {
 
     static AppointmentStepOne instance;
 
-    public static AppointmentStepOne getInstance()
+    /*public static AppointmentStepOne getInstance()
     {
         if(instance == null)
         {
             instance = new AppointmentStepOne();
         }
         return instance;
+    }*/
+    public static AppointmentStepOne newInstance() {
+        AppointmentStepOne fragment = new AppointmentStepOne();
+        return fragment;
     }
 
     @Override
@@ -93,6 +101,8 @@ public class AppointmentStepOne extends Fragment {
         //localBroadcastManager.unregisterReceiver(displayTimeSlot);
         super.onDestroy();
     }
+
+
 
     @Nullable
     @Override

@@ -1,16 +1,20 @@
 package com.example.lifeline;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,8 +28,7 @@ import java.util.List;
 
 public class BookingActivity extends AppCompatActivity {
     public static int step = 0;
-
-
+    FragmentPagerAdapter adapter;
     StepView stepView;
 
     ViewPager viewPager;
@@ -75,9 +78,12 @@ public class BookingActivity extends AppCompatActivity {
         });
         setupStepView();
         setColorButton();
+        adapter = new MyViewPageAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(adapter);
+        viewPager.setSaveFromParentEnabled(false);
 
-        viewPager.setAdapter(new MyViewPageAdapter(getSupportFragmentManager()));
-        viewPager.setOffscreenPageLimit(3);
+        viewPager.setOffscreenPageLimit(2);
+
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -85,11 +91,11 @@ public class BookingActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onPageSelected(int i) {
-                stepView.go(i,true);
-                if(i==0)
+            public void onPageSelected(int step) {
+                stepView.go(step,true);
+                if(step==0)
                     btn_prev_step.setEnabled(false);
-                else if(i==2)
+                else if(step==2)
                     btn_next_step.setEnabled(false);
                 else
                     btn_prev_step.setEnabled(true);
@@ -103,6 +109,18 @@ public class BookingActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull String name, @NonNull Context context, @NonNull AttributeSet attrs) {
+        return super.onCreateView(name, context, attrs);
+
     }
 
     private void setColorButton()

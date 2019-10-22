@@ -29,6 +29,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/TextView"
             android:layout_alignParentEnd="true"
             android:id="@+id/pending_gender"
             android:text="M"/>
@@ -58,6 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/pending_dobTv"
+            style="@style/TextView"
             android:layout_below="@+id/pending_emailTv"
             android:text="Date of Birth : "
             android:layout_marginTop="5dp"/>
@@ -65,10 +67,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/TextView"
             android:id="@+id/pending_dob"
             android:layout_toEndOf="@id/pending_dobTv"
             android:layout_below="@+id/pending_emailTv"
-            android:fontFamily="sans-serif-condensed-light"
             android:text="10/10/1999"
             android:layout_marginTop="5dp"/>
 
@@ -77,6 +79,7 @@
             android:layout_height="wrap_content"
             android:text="Blood Group : "
             android:layout_toEndOf="@id/pending_dob"
+            style="@style/TextView"
             android:layout_below="@id/pending_email"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="10pt"
@@ -86,6 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="B +"
+            style="@style/TextView"
             android:layout_toEndOf="@id/pending_bloodGrpTv"
             android:layout_below="@id/pending_email"
             android:layout_marginTop="5dp"
