@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -152,6 +153,9 @@ public class AppointmentStepThree extends Fragment implements View.OnClickListen
             case R.id.option_one:
                 pBar.setVisibility(View.VISIBLE);
                 saveInfo();
+                Toast.makeText(getContext(),"Booking Appointment...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(),"Appointment Confirmed",Toast.LENGTH_LONG).show();
+                //Toast.make(view, "Appointment Confirmed", Snackbar.LENGTH_LONG).show();
                 break;
             case R.id.option_two:
                 Intent i = new Intent(getContext(), PaytmActivity.class);;
