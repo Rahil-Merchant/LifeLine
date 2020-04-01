@@ -42,7 +42,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Friday, 23-10-2019"
+                android:text="Fri Apr 03"
                 android:layout_below="@id/calendartick"
                 android:fontFamily="@font/montserrat"
                 android:textSize="15dp"
@@ -59,6 +59,7 @@
                 android:layout_below="@id/tv1"
                 android:padding="2dp"
                 android:layout_marginBottom="3dp"
+                android:id="@+id/tv2"
                 android:gravity="center_horizontal"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
