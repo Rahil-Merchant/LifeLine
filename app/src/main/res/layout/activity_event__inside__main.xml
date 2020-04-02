@@ -31,11 +31,9 @@
         android:textStyle="bold" />
 
 
-
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="493dp"
         android:backgroundTint="#FFFFFF">
 
         <RelativeLayout
@@ -48,9 +46,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="27dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat"
                 android:text="D E S C R I P T I O N"
                 android:textColor="@color/red"
-                android:fontFamily="@font/montserrat"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -58,90 +56,85 @@
                 android:id="@+id/text_view_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/red"
-                android:layout_marginLeft="27dp"
                 android:layout_below="@+id/Description"
+                android:layout_marginLeft="27dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/montserrat"
                 android:text="ABC"
+                android:textColor="@color/red"
                 android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/Contact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="27dp"
-                android:textColor="@color/red"
-                android:fontFamily="@font/montserrat"
                 android:layout_below="@+id/text_view_description"
+                android:layout_marginLeft="27dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat"
                 android:text="C O N T A C T"
+                android:textColor="@color/red"
                 android:textSize="15sp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_view_phone_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="27dp"
                 android:layout_below="@+id/Contact"
-                android:textColor="@color/red"
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="5dp"
+                android:autoLink="phone"
                 android:fontFamily="@font/montserrat"
                 android:text="9920016542"
-                android:layout_marginTop="5dp"
-                android:textSize="15sp"
-                android:autoLink="phone"/>
+                android:textColor="@color/red"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/Address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="27dp"
                 android:layout_below="@+id/text_view_phone_number"
+                android:layout_marginLeft="27dp"
                 android:layout_marginTop="10dp"
-                android:text="A D D R E S S"
-                android:textSize="15sp"
-                android:textColor="@color/red"
                 android:fontFamily="@font/montserrat"
-                android:textStyle="bold"
-                />
+                android:text="A D D R E S S"
+                android:textColor="@color/red"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_view_Address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="27dp"
                 android:layout_below="@+id/Address"
-                android:text="9920016542"
+                android:layout_marginLeft="27dp"
                 android:layout_marginTop="5dp"
-                android:textColor="@color/red"
+                android:autoLink="phone"
                 android:fontFamily="@font/montserrat"
-                android:textSize="15sp"
-                android:autoLink="phone"/>
+                android:text="9920016542"
+                android:textColor="@color/red"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/Map"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="27dp"
                 android:layout_below="@+id/text_view_Address"
+                android:layout_marginLeft="27dp"
                 android:layout_marginTop="10dp"
                 android:text="M A P"
-                android:textSize="15sp"
-                />
+                android:textSize="15sp" />
 
             <com.google.android.gms.maps.MapView
+                android:id="@+id/google_map"
                 android:layout_width="250dp"
                 android:layout_height="300dp"
-                android:id="@+id/google_map"
                 android:layout_below="@+id/Map"
                 android:layout_marginLeft="27dp"
-                android:layout_marginTop="5dp"
-                />
+                android:layout_marginTop="4dp" />
 
         </RelativeLayout>
-
 
 
     </androidx.cardview.widget.CardView>
@@ -152,6 +145,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Press below button to check if you are eligible to donate blood"
+        android:visibility="gone"
         android:gravity="center_horizontal"/>
 
     <Button
@@ -160,6 +154,7 @@
         android:layout_gravity="center"
         style="@style/Button"
         android:layout_marginTop="7dp"
+        android:visibility="gone"
         android:text="Check"
         android:id="@+id/check_Button"/>
 
