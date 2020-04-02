@@ -49,7 +49,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Today's Appointments"
+        android:text="Appointments"
         android:fontFamily="@font/montserrat"
         android:backgroundTint="@color/red"
         android:drawableRight="@drawable/ic_today_black_24dp"

@@ -35,7 +35,7 @@ public class PendingApplicationsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pending_applications);
-        setTitle("Today's Appointments");
+        setTitle("Appointments");
         userRef=db.collection("users");
         applRef=db.collection("applwait");
         setUpRecyclerView();
